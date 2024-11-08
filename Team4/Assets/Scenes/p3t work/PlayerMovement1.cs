@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-	public CharacterController2D controller;
+    public CharacterController2D controller;
 
-	public float runSpeed = 40f;
+    public float runSpeed = 40f;
 
-	float horizontalMove = 0f;
-	bool jump = false;
+    float horizontalMove = 0f;
+    bool jump = false;
+    [SerializeField] public int jumps = 2;
+    int jumpsMax = 2;
 	bool crouch = false;
 	
 	// Update is called once per frame
 	void Update () {
 
+        controller = GetComponent<CharacterController2D>();
+
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-		if (Input.GetButtonDown("Jump"))
+		if (Input.GetButtonDown("Jump") && jumps > 0)
 		{
+            jumps--;
 			jump = true;
 		}
 
@@ -30,7 +35,17 @@ public class PlayerMovement : MonoBehaviour {
 			crouch = false;
 		}
 
-	}
+        if(controller.m_Grounded)
+        {
+            jumps = jumpsMax;
+        }
+
+        if (jumps < 0)
+        {
+            jumps = 0;
+        }
+
+    }
 
 	void FixedUpdate ()
 	{
