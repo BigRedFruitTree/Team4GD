@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class playerattack : MonoBehaviour
 {
+    
     private GameObject attackArea = default;
 
     private bool attacking = false;
@@ -20,6 +21,7 @@ public class playerattack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(Input.GetKeyDown(KeyCode.F))
         {
             Attack();
