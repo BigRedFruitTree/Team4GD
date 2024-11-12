@@ -7,10 +7,12 @@ public class NewBehaviourScript : MonoBehaviour
     public float timeToshow = 2f;
     private float timer = 0f;
     SpriteRenderer spriteSquare;
+    BoxCollider2D attackAreaCollider;
     // Start is called before the first frame update
     void Start()
     {
         spriteSquare = gameObject.GetComponent<SpriteRenderer>();
+        attackAreaCollider = gameObject.GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -19,6 +21,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             spriteSquare.enabled = true;
+            attackAreaCollider.enabled = true;
         }
         timer += Time.deltaTime;
 
@@ -26,7 +29,8 @@ public class NewBehaviourScript : MonoBehaviour
         {
             timer = 0;
             spriteSquare.enabled = false;
-           
+            attackAreaCollider.enabled = false;
+
         }
 
     }

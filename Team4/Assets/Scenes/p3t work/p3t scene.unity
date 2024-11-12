@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 222017971}
   - component: {fileID: 222017970}
   - component: {fileID: 222017969}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: green_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ Transform:
   m_GameObject: {fileID: 222017968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.07, y: 3.7517, z: 0}
+  m_LocalPosition: {x: 19.86, y: 3.7517, z: 0}
   m_LocalScale: {x: 0.42761582, y: 7.7830296, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -434,6 +434,7 @@ Transform:
   - {fileID: 27288049}
   - {fileID: 1539846720}
   - {fileID: 1353078644}
+  - {fileID: 1856713782}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &448472474
@@ -495,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovementScript: {fileID: 0}
-  m_JumpForce: 700
+  m_JumpForce: 600
   m_CrouchSpeed: 0.4
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -574,9 +575,11 @@ GameObject:
   - component: {fileID: 537494825}
   - component: {fileID: 537494824}
   - component: {fileID: 537494827}
-  m_Layer: 6
+  - component: {fileID: 537494828}
+  - component: {fileID: 537494829}
+  m_Layer: 3
   m_Name: R_slime_0
-  m_TagString: Untagged
+  m_TagString: EnemyBasic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -643,8 +646,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537494823}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.23, y: -2.259, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.633001, y: -2.253, z: 0}
   m_LocalScale: {x: 0.44462377, y: 0.56128734, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -680,11 +683,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.018058956, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -694,8 +697,49 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.94, y: 1.71}
+  m_Size: {x: 2.976118, y: 1.71}
   m_EdgeRadius: 0
+--- !u!114 &537494828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537494823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12dd87bbe51a29e40b04e568bdbdf19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0
+--- !u!50 &537494829
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537494823}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 3
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!1 &586632324
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +751,7 @@ GameObject:
   - component: {fileID: 586632327}
   - component: {fileID: 586632326}
   - component: {fileID: 586632325}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: green_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,7 +867,7 @@ Transform:
   m_GameObject: {fileID: 586632324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.08, y: 3.8506, z: 0}
+  m_LocalPosition: {x: -19.92, y: 3.8506, z: 0}
   m_LocalScale: {x: 0.42761582, y: 7.782432, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -941,7 +985,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0498, y: 0.77, z: 0}
-  m_LocalScale: {x: 1.2755, y: 1, z: 1}
+  m_LocalScale: {x: 2.6466627, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -957,7 +1001,7 @@ GameObject:
   - component: {fileID: 1447833953}
   - component: {fileID: 1447833952}
   - component: {fileID: 1447833951}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: green_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1073,7 +1117,7 @@ Transform:
   m_GameObject: {fileID: 1447833950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.01, y: -1.22, z: 0}
+  m_LocalPosition: {x: 13.99, y: -1.28, z: 0}
   m_LocalScale: {x: 3.8010297, y: 0.375, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1090,6 +1134,7 @@ GameObject:
   - component: {fileID: 1539846720}
   - component: {fileID: 1539846721}
   - component: {fileID: 1539846722}
+  - component: {fileID: 1539846723}
   m_Layer: 3
   m_Name: Nail
   m_TagString: Untagged
@@ -1179,6 +1224,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToshow: 0.75
+--- !u!61 &1539846723
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539846719}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.8, y: 3.6}
+    newSize: {x: 0.8, y: 3.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.8, y: 3.6}
+  m_EdgeRadius: 0
 --- !u!1 &1708509197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1281,7 @@ GameObject:
   - component: {fileID: 1708509200}
   - component: {fileID: 1708509199}
   - component: {fileID: 1708509198}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: green_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1306,7 +1397,7 @@ Transform:
   m_GameObject: {fileID: 1708509197}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.08, y: 1.89, z: 0}
+  m_LocalPosition: {x: -12.71, y: 1.89, z: 0}
   m_LocalScale: {x: 3.8010297, y: 0.375, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1440,7 +1531,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0411, y: -3.8809261, z: 0}
-  m_LocalScale: {x: 8.538642, y: 1, z: 1}
+  m_LocalScale: {x: 17.29075, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1531,22 +1622,21 @@ Transform:
   m_GameObject: {fileID: 1856713779}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.16, z: -10}
+  m_LocalScale: {x: 3.0073786, y: 1.6457325, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 448472473}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1856713782}
   - {fileID: 448472473}
+  - {fileID: 537494825}
   - {fileID: 1716086109}
   - {fileID: 1447833953}
   - {fileID: 1708509200}
   - {fileID: 586632327}
   - {fileID: 222017971}
   - {fileID: 1360173266}
-  - {fileID: 537494825}

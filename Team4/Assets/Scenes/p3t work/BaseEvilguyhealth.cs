@@ -4,12 +4,36 @@ using UnityEngine;
 
 public class Evilguyhealth : MonoBehaviour
 {
-    [SerializeField] private float maxHealth = 1f;
+    [SerializeField] private float maxHealth = 3f;
 
-    private float currentHealth;
+    [SerializeField] private float currentHealth;
 
-    private void Start()
+    private float speed = 5;
+    
+
+    void Start()
     {
         currentHealth = maxHealth;
+
     }
+
+    void Update()
+    {
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Nail")
+        {
+            currentHealth--;
+        }
+    }
+
 }
