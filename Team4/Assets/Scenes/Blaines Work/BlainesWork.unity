@@ -696,9 +696,9 @@ GameObject:
   m_Component:
   - component: {fileID: 774663440}
   - component: {fileID: 774663439}
-  - component: {fileID: 774663441}
   - component: {fileID: 774663442}
   - component: {fileID: 774663443}
+  - component: {fileID: 774663444}
   m_Layer: 6
   m_Name: EnemyBasic
   m_TagString: EnemyBasic
@@ -775,20 +775,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &774663441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774663438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44446cc35b613504dace45dfb64cc1db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 3
-  currentHealth: 0
 --- !u!61 &774663442
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -862,6 +848,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &774663444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774663438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4204d51b4f141429c845cde1dfdc8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2
+  currentHealth: 0
 --- !u!1 &958837233
 GameObject:
   m_ObjectHideFlags: 0
