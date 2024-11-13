@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class turnoffonwep : MonoBehaviour
 {
     public float timeToshow = 2f;
     private float timer = 0f;
