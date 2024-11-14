@@ -6,6 +6,9 @@ public class PlayerMovement : MonoBehaviour {
 
     public CharacterController2D controller;
 
+    public int health = 5;
+    public int maxHealth = 5;
+
     public float runSpeed = 40f;
 
     float horizontalMove = 0f;
@@ -16,6 +19,12 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (health < maxHealth)
+            health = 0;
+
+        if (health == 0)
+            Destroy(gameObject);
 
         controller = GetComponent<CharacterController2D>();
 
@@ -47,7 +56,15 @@ public class PlayerMovement : MonoBehaviour {
 
     }
 
-	void FixedUpdate ()
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "EnemyBasic")
+        {
+            health--;
+        }
+    }
+
+    void FixedUpdate ()
 	{
 		// Move character
 		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
