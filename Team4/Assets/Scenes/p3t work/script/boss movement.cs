@@ -15,6 +15,8 @@ public class bossmovement : MonoBehaviour {
 
     public float farmove = 8.5f;
 
+    public float timeuntilattack = 90;
+
 	bool facingRight = true;
 
 	Vector3 pos, localScale;
@@ -37,6 +39,16 @@ public class bossmovement : MonoBehaviour {
 			MoveRight ();
 		else
 			MoveLeft ();
+        if (timeuntilattack > 0)
+        {
+            timeuntilattack -= Time.deltaTime;
+        }
+        else
+        {
+            this.GetComponent<bossattacking>().enabled = true;
+            timeuntilattack = 90;
+        }
+
 	}
 
 	void CheckWhereToFace()
