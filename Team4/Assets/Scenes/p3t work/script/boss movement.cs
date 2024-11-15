@@ -46,7 +46,7 @@ public class bossmovement : MonoBehaviour {
         else
         {
             this.GetComponent<bossattacking>().enabled = true;
-            timeuntilattack = 90;
+            timeuntilattack = 7;
         }
 
 	}
