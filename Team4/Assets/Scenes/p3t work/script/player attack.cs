@@ -7,7 +7,8 @@ public class playerattack : MonoBehaviour
     
     private GameObject attackArea;
 
-    private bool attacking = false;
+    public bool attacking = true;
+    public bool canAttack = true;
 
     private float timeToAttack = 0.25f;
     private float timer = 0f;
@@ -22,23 +23,27 @@ public class playerattack : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && canAttack == true)
         {
+            canAttack = false;
             Attack();
         }
 
-        if(attacking)
+        if (canAttack = true && attacking)
         {
             timer += Time.deltaTime;
         
             if(timer >= timeToAttack)
             {
-                timer = 0;
+
+               timer = 0;
                 attacking = false;
                 attackArea.SetActive(attacking);
             }
         }
     }
+
+    
 
     private void Attack()
     {

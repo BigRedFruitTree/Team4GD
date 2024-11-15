@@ -41,7 +41,7 @@ public class BasicEnemyHealth : MonoBehaviour
         if (collision.gameObject.name == "Nail")
         {
             currentHealth--;
-            Debug.Log("hit");
+            
         }
 
         if (collision.gameObject.tag == "EnemyTurningPoint")

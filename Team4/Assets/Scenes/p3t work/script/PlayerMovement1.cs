@@ -6,8 +6,9 @@ public class PlayerMovement : MonoBehaviour {
 
     public CharacterController2D controller;
 
-    public int health = 5;
-    public int maxHealth = 5;
+    public int health = 10;
+    public int maxHealth = 10;
+    public bool canTakeDamage = true;
 
     public float runSpeed = 40f;
 
@@ -23,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
         if (health < maxHealth)
             health = 0;
 
-        if (health == 0)
+        if (health <= 0)
             Destroy(gameObject);
 
         controller = GetComponent<CharacterController2D>();
@@ -52,10 +53,22 @@ public class PlayerMovement : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "EnemyBasic")
+        if (collision.gameObject.tag == "EnemyBasic" && canTakeDamage == true)
         {
-            health--;
+            
+            canTakeDamage = false;
+            StartCoroutine("HitCoolDown");
+            
+           
+            
         }
+    }
+
+    IEnumerator HitCoolDown()
+    {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(10);
+        canTakeDamage = true;
     }
 
     void FixedUpdate ()

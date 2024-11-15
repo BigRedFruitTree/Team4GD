@@ -8,6 +8,8 @@ public class turnoffonwep : MonoBehaviour
     private float timer = 0f;
     SpriteRenderer spriteSquare;
     BoxCollider2D attackAreaCollider;
+
+    public bool canAttack = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +20,11 @@ public class turnoffonwep : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && canAttack == true)
         {
             spriteSquare.enabled = true;
             attackAreaCollider.enabled = true;
+            
         }
         timer += Time.deltaTime;
 
@@ -34,4 +37,6 @@ public class turnoffonwep : MonoBehaviour
         }
 
     }
+
+    
 }
