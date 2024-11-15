@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Evilguyhealth : MonoBehaviour
+public class BasicEnemyHealth : MonoBehaviour
 {
-    [SerializeField] private float maxHealth = 2f;
+    public float maxHealth = 2f;
 
-    [SerializeField] private float currentHealth;
+    public float currentHealth = 2;
 
     private float speed = 5;
     private bool FacingRight = false;
@@ -25,9 +25,9 @@ public class Evilguyhealth : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(FacingRight)
+        if (FacingRight)
         {
-          transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
         if (!FacingRight)
         {
@@ -41,6 +41,7 @@ public class Evilguyhealth : MonoBehaviour
         if (collision.gameObject.name == "Nail")
         {
             currentHealth--;
+            Debug.Log("hit");
         }
 
         if (collision.gameObject.tag == "EnemyTurningPoint")
@@ -51,22 +52,21 @@ public class Evilguyhealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Wall")
+        if (gameObject.tag == "Wall")
         {
             Flip();
         }
-
+        
     }
 
     private void Flip()
     {
-        
+
         FacingRight = !FacingRight;
 
-       
+
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-
 }
