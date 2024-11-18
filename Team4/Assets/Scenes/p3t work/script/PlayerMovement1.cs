@@ -22,7 +22,7 @@ public class PlayerMovement1 : MonoBehaviour {
 	void Update () {
 
         if (health > maxHealth)
-            health = 0;
+        health = maxHealth;
 
         if (health <= 0)
             Destroy(gameObject);
