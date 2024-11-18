@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
-    public PlayerMovement playerMovementScript;
+    public PlayerMovement1 playerMovementScript;
 
     [SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
@@ -32,7 +32,7 @@ public class CharacterController2D : MonoBehaviour
 
     void Update()
     {
-        playerMovementScript = GetComponent<PlayerMovement>();
+        playerMovementScript = GetComponent<PlayerMovement1>();
     }
 
 

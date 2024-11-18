@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement1 : MonoBehaviour {
 
     public CharacterController2D controller;
 
@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour {
     bool jump = false;
     [SerializeField] public int jumps = 2;
     int jumpsMax = 2;
-	
-	
+
+    
 	// Update is called once per frame
 	void Update () {
 
@@ -35,9 +35,7 @@ public class PlayerMovement : MonoBehaviour {
 		{
             jumps--;
 			jump = true;
-		}
-
-		
+		}	
 
         if(controller.m_Grounded)
         {
@@ -51,16 +49,14 @@ public class PlayerMovement : MonoBehaviour {
 
     }
 
+   
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "EnemyBasic" && canTakeDamage == true)
         {
-            
             canTakeDamage = false;
             StartCoroutine("HitCoolDown");
-            
-           
-            
         }
     }
 
