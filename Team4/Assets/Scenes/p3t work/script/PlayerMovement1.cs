@@ -21,7 +21,7 @@ public class PlayerMovement1 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (health < maxHealth)
+        if (health > maxHealth)
             health = 0;
 
         if (health <= 0)
@@ -49,22 +49,24 @@ public class PlayerMovement1 : MonoBehaviour {
 
     }
 
-   
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "EnemyBasic" && canTakeDamage == true)
         {
             canTakeDamage = false;
             StartCoroutine("HitCoolDown");
+            
+            
         }
     }
 
+
+
     IEnumerator HitCoolDown()
     {
-        canTakeDamage = false;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(2);
         canTakeDamage = true;
+        
     }
 
     void FixedUpdate ()

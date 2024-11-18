@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPCScript : MonoBehaviour
 {
     public GameObject Dialouge;
+    public GameObject Background;
     private PlayerMovement1 playerScript;
 
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class NPCScript : MonoBehaviour
         if(collision.gameObject.tag == ("Player")) 
         {
             Dialouge.SetActive(true);
+            Background.SetActive(true);
             
         }
             
