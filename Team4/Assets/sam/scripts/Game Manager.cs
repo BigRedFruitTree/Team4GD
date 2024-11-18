@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public bool isPaused = false;
-    public PlayerMovement playerData;
+    public PlayerMovement1 playerData;
     public Image healthBar;
     public GameObject pausemenu;
     public bool finished = false;
