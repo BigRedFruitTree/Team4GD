@@ -27,6 +27,7 @@ public class playerattack : MonoBehaviour
         {
             canAttack = false;
             Attack();
+            
         }
 
         if (canAttack = true && attacking)
@@ -42,12 +43,11 @@ public class playerattack : MonoBehaviour
             }
         }
     }
-
-    
-
     private void Attack()
     {
         attacking = true;
         attackArea.SetActive(attacking);
     }
+
+   
 }
