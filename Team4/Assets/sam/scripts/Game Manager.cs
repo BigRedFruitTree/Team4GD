@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
       
     }
 
-
+    //this note
     // Update is called once per frame
     void Update()
     {
