@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         pausemenu.SetActive(false);
+        playerData = GameObject.Find("Blue_0").GetComponent<PlayerMovement1>();
     }
 
 
@@ -38,8 +39,12 @@ public class GameManager : MonoBehaviour
                     isPaused = true;
 
                 }
-                else
-                    Resume();
+                else 
+                {
+                  Resume();
+                }
+                    
+
             }
         }
     }
@@ -66,5 +71,4 @@ public class GameManager : MonoBehaviour
     {
         LoadLevel(SceneManager.GetActiveScene().buildIndex);
     }
-
 }

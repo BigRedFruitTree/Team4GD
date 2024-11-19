@@ -71,7 +71,7 @@ public class PlayerMovement1 : MonoBehaviour {
 
     void FixedUpdate ()
 	{
-		// Move character
+		
 		controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
 		jump = false;
 	}

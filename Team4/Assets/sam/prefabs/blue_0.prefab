@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToshow: 0.5
+  canAttack: 1
 --- !u!61 &576753657903218611
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -222,8 +223,8 @@ GameObject:
   - component: {fileID: 7677604529707847739}
   - component: {fileID: 967082621692462018}
   - component: {fileID: 5642894743813717093}
-  - component: {fileID: 1653902644033582718}
   - component: {fileID: 1475180774210322343}
+  - component: {fileID: 6457662460616840609}
   m_Layer: 3
   m_Name: blue_0
   m_TagString: Untagged
@@ -392,7 +393,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovementScript: {fileID: 0}
   m_JumpForce: 600
-  m_CrouchSpeed: 0.4
   m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
@@ -400,31 +400,10 @@ MonoBehaviour:
     m_Bits: 183
   m_GroundCheck: {fileID: 4383285536844452777}
   m_CeilingCheck: {fileID: 5526558289354714829}
-  m_CrouchDisableCollider: {fileID: 967082621692462018}
   m_Grounded: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1653902644033582718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7139477508548641106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0799736b6fdadd47a4667c6d5e0c21f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 5642894743813717093}
-  health: 5
-  maxHealth: 5
-  runSpeed: 40
-  jumps: 2
 --- !u!58 &1475180774210322343
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -461,6 +440,24 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.5589774}
   m_Radius: 0.6304076
+--- !u!114 &6457662460616840609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7139477508548641106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f9bdf7779ac694593d83745e650690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  health: 10
+  maxHealth: 10
+  canTakeDamage: 1
+  runSpeed: 40
+  jumps: 2
 --- !u!1 &7732235486455384400
 GameObject:
   m_ObjectHideFlags: 0
