@@ -2480,7 +2480,7 @@ PrefabInstance:
     - target: {fileID: 4496588196753804686, guid: c93ea01ed94d04c4291a83a7260f7ad6, type: 3}
       propertyPath: playerData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1097745851}
     - target: {fileID: 4498323500650753427, guid: c93ea01ed94d04c4291a83a7260f7ad6, type: 3}
       propertyPath: m_Name
       value: game manager
@@ -3048,6 +3048,17 @@ MonoBehaviour:
   canTakeDamage: 1
   runSpeed: 40
   jumps: 2
+--- !u!114 &1097745851 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6457662460616840609, guid: 3feb8dcc9740fe7419c0bc9316684e48, type: 3}
+  m_PrefabInstance: {fileID: 349354035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097745843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f9bdf7779ac694593d83745e650690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1103379174
 GameObject:
   m_ObjectHideFlags: 0

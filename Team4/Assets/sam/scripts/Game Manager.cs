@@ -17,13 +17,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         pausemenu.SetActive(false);
-        playerData = GameObject.Find("Blue_0").GetComponent<PlayerMovement1>();
+      
     }
 
 
     // Update is called once per frame
     void Update()
-    { 
+    {
         if (SceneManager.GetActiveScene().buildIndex > 0)
         {
             healthBar.fillAmount = Mathf.Clamp((float)playerData.health / (float)playerData.maxHealth, 0, 1);
