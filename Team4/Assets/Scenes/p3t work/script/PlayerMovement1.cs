@@ -47,6 +47,9 @@ public class PlayerMovement1 : MonoBehaviour {
             jumps = 0;
         }
 
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
+        jump = false;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -69,10 +72,5 @@ public class PlayerMovement1 : MonoBehaviour {
         
     }
 
-    void FixedUpdate ()
-	{
-		
-		controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
-		jump = false;
-	}
+   
 }
