@@ -643,7 +643,7 @@ Transform:
   m_GameObject: {fileID: 246098514}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18, y: -2.6, z: 0.0453859}
+  m_LocalPosition: {x: -14.43, y: 3.73, z: 0.0453859}
   m_LocalScale: {x: 0.59341, y: 0.59341, z: 0.59341}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -913,7 +913,6 @@ GameObject:
   - component: {fileID: 448472474}
   - component: {fileID: 448472478}
   - component: {fileID: 448472475}
-  - component: {fileID: 448472477}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -1092,24 +1091,6 @@ MonoBehaviour:
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &448472477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448472470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0799736b6fdadd47a4667c6d5e0c21f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 448472475}
-  health: 5
-  maxHealth: 5
-  canTakeDamage: 1
-  runSpeed: 40
-  jumps: 2
 --- !u!58 &448472478
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1948,8 +1929,8 @@ Transform:
   m_GameObject: {fileID: 1399754418}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.95, y: 3.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.68, y: 3.25, z: 0}
+  m_LocalScale: {x: 1.1856, y: 1.1856, z: 1.1856}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2010,6 +1991,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7e3e9313bcf0e7469a1c1f76cc724e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  move: {fileID: 1399754421}
+  hitdelay: 2
 --- !u!1 &1457476220
 GameObject:
   m_ObjectHideFlags: 0
