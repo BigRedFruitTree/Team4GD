@@ -22,8 +22,10 @@ public class turnoffonwep : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && canAttack == true)
         {
-            spriteSquare.enabled = true;
-            attackAreaCollider.enabled = true;
+           canAttack = false;
+           spriteSquare.enabled = true;
+           attackAreaCollider.enabled = true;
+            StartCoroutine("HitCoolDown");
             
         }
         timer += Time.deltaTime;
@@ -38,5 +40,10 @@ public class turnoffonwep : MonoBehaviour
 
     }
 
-    
+    IEnumerator HitCoolDown()
+    {
+        yield return new WaitForSeconds(1f);
+        canAttack = true;
+
+    }
 }
