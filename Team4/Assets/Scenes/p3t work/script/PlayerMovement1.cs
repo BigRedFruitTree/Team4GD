@@ -58,8 +58,13 @@ public class PlayerMovement1 : MonoBehaviour {
         {
             canTakeDamage = false;
             StartCoroutine("HitCoolDown");
-            
-            
+            health--;
+        }
+        if (collision.gameObject.tag == "EnemyFlying" && canTakeDamage == true)
+        {
+            canTakeDamage = false;
+            StartCoroutine("HitCoolDown");
+            health--;
         }
     }
 
@@ -67,7 +72,7 @@ public class PlayerMovement1 : MonoBehaviour {
 
     IEnumerator HitCoolDown()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1f);
         canTakeDamage = true;
         
     }
