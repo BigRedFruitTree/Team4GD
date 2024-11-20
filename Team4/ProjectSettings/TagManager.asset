@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - EnemyTurningPoint
   - EnemyFlying
+  - EnemyFlyingTurningPoint
   layers:
   - Default
   - TransparentFX

@@ -8,9 +8,8 @@ public class FlyingEnemy : MonoBehaviour
     [SerializeField] public float frequency = 20f;
     [SerializeField] public float magnitude = 0.5f;
 
-    bool facingRight = true;
-    public float farmove = 8.5f;
-
+    public bool facingRight = true;
+    
     public float maxHealth = 2f;
 
     public float currentHealth = 2;
@@ -28,12 +27,22 @@ public class FlyingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckWhereToFace();
+        if (((facingRight) && (localScale.x < 0)) || ((!facingRight) && (localScale.x > 0)))
+        {
+            localScale.x *= -1;
+        }
+        transform.localScale = localScale;
+
 
         if (facingRight)
-            MoveRight();
-        else
+        {
+           MoveRight();
+        }
+
+        if (!facingRight)
+        {
             MoveLeft();
+        }
 
         if (currentHealth <= 0)
         {
@@ -42,19 +51,7 @@ public class FlyingEnemy : MonoBehaviour
 
     }
 
-    void CheckWhereToFace()
-    {
-        if (pos.x < -farmove)
-            facingRight = true;
-
-        else if (pos.x > farmove)
-            facingRight = false;
-
-        if (((facingRight) && (localScale.x < 0)) || ((!facingRight) && (localScale.x > 0)))
-            localScale.x *= -1;
-
-        transform.localScale = localScale;
-    }
+   
 
     void MoveRight()
     {
@@ -73,6 +70,12 @@ public class FlyingEnemy : MonoBehaviour
         if (collision.gameObject.name == "Nail")
         {
             currentHealth--;
+
+        }
+
+        if (collision.gameObject.tag == "EnemyTurningPoint")
+        {
+            facingRight = !facingRight;
 
         }
 
