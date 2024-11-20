@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex > 0)
         {
             healthBar.fillAmount = Mathf.Clamp((float)playerData.health / (float)playerData.maxHealth, 0, 1);
-           
+
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (!isPaused)
@@ -39,36 +39,50 @@ public class GameManager : MonoBehaviour
                     isPaused = true;
 
                 }
-                else 
+                else
                 {
-                  Resume();
+                    Resume();
                 }
-                    
 
             }
         }
-    }
-    public void Resume()
-    {
-        pausemenu.SetActive(false);
+         void Resume()
+        {
+            pausemenu.SetActive(false);
 
-        Time.timeScale = 1;
+            Time.timeScale = 1;
 
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = false;
 
-        isPaused = false;
+            isPaused = false;
+        }
+        
+        void QuitGame()
+        {
+            Application.Quit();
+        }
+        
+        void LoadLevel(int sceneID)
+        {
+            SceneManager.LoadScene(sceneID);
+        }
+        
+         void RestartLevel()
+        {
+            LoadLevel(SceneManager.GetActiveScene().buildIndex);
+        }
+
+         void OnCollisionEnter2D(Collision2D collision)
+        {
+
+            if (collision.gameObject.tag == "DOOR")
+            {
+                LoadLevel(2);
+            }
+            if (collision.gameObject.tag == "HIVE")
+            {
+              LoadLevel(4);
+            }
+        }
     }
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-    public void LoadLevel(int sceneID)
-    {
-        SceneManager.LoadScene(sceneID);
-    }
-    public void RestartLevel()
-    {
-        LoadLevel(SceneManager.GetActiveScene().buildIndex);
-    }
-}
