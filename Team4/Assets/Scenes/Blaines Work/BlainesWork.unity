@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 399560949}
   m_Layer: 0
   m_Name: FlyingTurningPoint 1B
-  m_TagString: EnemyFlyingTurningPoint
+  m_TagString: EnemyTurningPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1164,7 +1164,7 @@ GameObject:
   - component: {fileID: 1367778905}
   m_Layer: 0
   m_Name: FlyingTurningPoint 1A
-  m_TagString: EnemyFlyingTurningPoint
+  m_TagString: EnemyTurningPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
