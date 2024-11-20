@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         pausemenu.SetActive(false);
-      
+
     }
 
     //this note
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
             }
         }
-         void Resume()
+        void Resume()
         {
             pausemenu.SetActive(false);
 
@@ -57,23 +57,23 @@ public class GameManager : MonoBehaviour
 
             isPaused = false;
         }
-        
+
         void QuitGame()
         {
             Application.Quit();
         }
-        
+
         void LoadLevel(int sceneID)
         {
             SceneManager.LoadScene(sceneID);
         }
-        
-         void RestartLevel()
+
+        void RestartLevel()
         {
             LoadLevel(SceneManager.GetActiveScene().buildIndex);
         }
 
-         void OnCollisionEnter2D(Collision2D collision)
+        void OnCollisionEnter2D(Collision2D collision)
         {
 
             if (collision.gameObject.tag == "DOOR")
@@ -82,7 +82,8 @@ public class GameManager : MonoBehaviour
             }
             if (collision.gameObject.tag == "HIVE")
             {
-              LoadLevel(4);
+                LoadLevel(4);
             }
         }
     }
+}
