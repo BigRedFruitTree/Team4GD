@@ -9,7 +9,16 @@ EditorBuildSettings:
     path: Assets/Alakai/Menu.unity
     guid: 03dcd6dc7eca2ec42b7729bf8ea360bb
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/sam/seancs/lvl 1 and ui stuff.unity
+    guid: 750914a7aae56f642bee9210106b1f2b
+  - enabled: 1
+    path: Assets/Alakai/lvl 2.unity
+    guid: c996ad8776b3aac499e46f09e6568c4b
+  - enabled: 1
+    path: Assets/sam/seancs/lvl3.unity
+    guid: bb3744c8c7a940046b4c6aab4f191f58
+  - enabled: 1
+    path: Assets/Scenes/p3t work/p3t boss scene.unity
+    guid: 2679903b798f34149b81a75c094f7b70
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
