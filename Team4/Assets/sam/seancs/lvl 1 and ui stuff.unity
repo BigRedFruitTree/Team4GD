@@ -706,11 +706,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 697594244860738196, guid: 3feb8dcc9740fe7419c0bc9316684e48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.9782095
+      value: 26.2
       objectReference: {fileID: 0}
     - target: {fileID: 697594244860738196, guid: 3feb8dcc9740fe7419c0bc9316684e48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.91
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 697594244860738196, guid: 3feb8dcc9740fe7419c0bc9316684e48, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1685,14 +1685,14 @@ RectTransform:
   m_GameObject: {fileID: 668278700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 22.5, y: 3, z: 1}
+  m_LocalScale: {x: 22.5, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1057474141}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.909999, y: -8.930002}
+  m_AnchoredPosition: {x: -9.909999, y: -5.95}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &675238814
@@ -2831,7 +2831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.13, y: 5.7}
+  m_AnchoredPosition: {x: 4.13, y: 5.42}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1057474142
@@ -2854,7 +2854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Errm what the sigma
+  m_text: defeat the hive. we need to be the righteous ones.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2919,7 +2919,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -9.994497, y: 10.32219, z: 9.63907, w: -7.896374}
+  m_margin: {x: -10.850649, y: 5.266858, z: 8.864457, w: -7.896374}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
