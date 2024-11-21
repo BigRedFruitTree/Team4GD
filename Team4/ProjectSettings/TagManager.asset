@@ -9,6 +9,7 @@ TagManager:
   - EnemyTurningPoint
   - EnemyFlying
   - EnemyFlyingTurningPoint
+  - HIVE
   layers:
   - Default
   - TransparentFX

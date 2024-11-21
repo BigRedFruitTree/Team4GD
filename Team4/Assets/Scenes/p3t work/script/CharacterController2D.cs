@@ -19,6 +19,7 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	public GameManager gm;
 
 	[Header("Events")]
 	[Space]
@@ -115,6 +116,20 @@ public class CharacterController2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	public void OnTriggerEnter2D(Collider2D collision)
+	{
+
+		if (collision.gameObject.tag == "DOOR")
+		{
+			gm.LoadLevel(2);
+		}
+
+		if (collision.gameObject.tag == "HIVE")
+		{
+			gm.LoadLevel(4);
+		}
 	}
 
 }
