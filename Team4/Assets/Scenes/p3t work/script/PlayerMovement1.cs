@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement1 : MonoBehaviour {
 
     public CharacterController2D controller;
+    public GameObject nailPos;
+    public GameObject Nail;
 
     public int health = 10;
     public int maxHealth = 10;
@@ -31,6 +33,10 @@ public class PlayerMovement1 : MonoBehaviour {
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
+        nailPos = GameObject.Find("NailPos");
+
+        Nail = GameObject.Find("Nail");
+
 		if (Input.GetButtonDown("Jump") && jumps > 0)
 		{
             jumps--;
@@ -46,6 +52,9 @@ public class PlayerMovement1 : MonoBehaviour {
         {
             jumps = 0;
         }
+
+        Nail.transform.position = nailPos.transform.position;
+        Nail.transform.rotation = nailPos.transform.rotation;
 
         controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
         jump = false;
