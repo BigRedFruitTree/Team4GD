@@ -8,7 +8,7 @@ public class bossmovement : MonoBehaviour {
 	public float moveSpeed = 5f;
 
 	[SerializeField]
-	public float frequency = 20f;
+	public float frequency = 5f;
 
 	[SerializeField]
 	public float magnitude = 0.5f;
@@ -23,8 +23,11 @@ public class bossmovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-		pos = transform.position;
+        moveSpeed = 5f;
+        magnitude = 0.5f;
+        frequency = 5f;
+
+        pos = transform.position;
 
 		localScale = transform.localScale;
 
