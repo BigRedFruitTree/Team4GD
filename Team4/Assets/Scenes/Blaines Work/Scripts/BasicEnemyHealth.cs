@@ -8,7 +8,7 @@ public class BasicEnemyHealth : MonoBehaviour
 
     public float currentHealth = 2;
 
-    private float speed = 5;
+    public float speed = 5;
     private bool FacingRight = false;
 
 
