@@ -83,6 +83,13 @@ public class PlayerMovement1 : MonoBehaviour {
             StartCoroutine("HitCoolDown");
             health--;
         }
+
+        if (collision.gameObject.name == "BossAttack1" && canTakeDamage == true)
+        {
+            canTakeDamage = false;
+            StartCoroutine("HitCoolDown");
+            health--;
+        }
     }
 
     IEnumerator HitCoolDown()
