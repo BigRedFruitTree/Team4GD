@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &19427339
 Transform:
   m_ObjectHideFlags: 0
@@ -1678,8 +1678,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1486032731
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0.5, b: 0.02040255, a: 1}
@@ -1701,11 +1701,11 @@ Transform:
   m_GameObject: {fileID: 1070747873}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7026, z: 0}
-  m_LocalScale: {x: 0.99993926, y: 0.49682528, z: 1}
+  m_LocalPosition: {x: -6.12, y: -4.467818, z: 0}
+  m_LocalScale: {x: 62.71862, y: 1.4172053, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2096994095}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1321572679
 GameObject:
@@ -1889,6 +1889,7 @@ GameObject:
   - component: {fileID: 1503889612}
   - component: {fileID: 1503889613}
   - component: {fileID: 1503889614}
+  - component: {fileID: 1503889615}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss1
@@ -1959,7 +1960,7 @@ Transform:
   m_GameObject: {fileID: 1503889609}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: -2.25, z: 0}
+  m_LocalPosition: {x: 0.14, y: -2.21, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1978,11 +1979,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee059c3dd0c6c8248a81d432d5de7c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   health: 50
   maxHealth: 50
   healthbar: {fileID: 1508008602}
+  agent: {fileID: 1503889615}
+  player: {fileID: 980503585}
+  DistMin: 10
+  DistMax: 15
+  Player: {fileID: 980503591}
   attack1HB: {fileID: 19427338}
   attackTimer: 10
+  bossAtacking: 0
+  attackNumber: 0
 --- !u!61 &1503889613
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2056,6 +2065,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!195 &1503889615
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503889609}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1508008600
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,14 +2337,14 @@ Transform:
   m_LocalPosition: {x: -6.12, y: -6.472, z: 0}
   m_LocalScale: {x: 62.72243, y: 2.8525226, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1070747876}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1070747876}
   - {fileID: 2096994095}
   - {fileID: 980503591}
   - {fileID: 1027785581}
