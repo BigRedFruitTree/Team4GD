@@ -5,27 +5,27 @@ using UnityEngine;
 public class bossmovement : MonoBehaviour {
 
 	[SerializeField]
-	public float moveSpeed = 5f;
+	public float moveSpeed;
+    public float moveSpeedredo;
 
-	[SerializeField]
-	public float frequency = 5f;
+    [SerializeField]
+	public float frequency;
+    public float frequencyredo;
+    [SerializeField]
+	public float magnitude;
+    public float magnituderedo;
+    public float farmove;
 
-	[SerializeField]
-	public float magnitude = 0.5f;
+    public float timeuntilattack;
+    public float timeuntilattackredo;
 
-    public float farmove = 8.5f;
-
-    public float timeuntilattack = 90;
-
-	bool facingRight = true;
+    bool facingRight = true;
 
 	Vector3 pos, localScale;
 
 	// Use this for initialization
-	void Start () {
-        moveSpeed = 5f;
-        magnitude = 0.5f;
-        frequency = 5f;
+	void Start ()
+    {
 
         pos = transform.position;
 
@@ -49,7 +49,7 @@ public class bossmovement : MonoBehaviour {
         else
         {
             this.GetComponent<bossattacking>().enabled = true;
-            timeuntilattack = 7;
+            timeuntilattack = 0;
         }
 
 	}
