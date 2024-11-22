@@ -10,9 +10,9 @@ public class bossstings : MonoBehaviour
     public float tillnext = 2f;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        
+        this.GetComponent<bossattacking>().enabled = false;
     }
 
     // Update is called once per frame
