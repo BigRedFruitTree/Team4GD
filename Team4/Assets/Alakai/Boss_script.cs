@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using Vector2 = UnityEngine.Vector2;
 
 
 
@@ -22,9 +23,10 @@ public class NewBehaviourScript : MonoBehaviour
     public bool insightrange = false;
     public LayerMask PlayerLayer;
     public Vector2 Playerloco;
+    public Transform PlayerTr;
+    public Transform Boss1;
     public int speed = 5;
-    public bool left=true ;
-    public bool right= false;
+    public bool right = false;
 
     public GameObject attack1HB;
     public float attackTimer = 10;
@@ -39,8 +41,7 @@ public class NewBehaviourScript : MonoBehaviour
         attack1HB.SetActive(false);
 
         health = maxHealth;
-        
-        
+
     }
 
     // Update is called once per frame SKibidi
@@ -80,7 +81,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (insightrange == true)
         {
-
+            
         }
 
         if (health <= 0)
@@ -124,9 +125,6 @@ public class NewBehaviourScript : MonoBehaviour
         {
             Playerloco = collider.transform.position;
             insightrange = true;
-            
-
-
         }
     }
 }
