@@ -45,7 +45,6 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
         if (attackTimer > 0)
         {
             attackTimer -= Time.deltaTime;
