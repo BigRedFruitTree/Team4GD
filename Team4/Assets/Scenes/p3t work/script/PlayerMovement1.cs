@@ -19,9 +19,11 @@ public class PlayerMovement1 : MonoBehaviour {
     [SerializeField] public int jumps = 2;
     int jumpsMax = 2;
 
-    
-	// Update is called once per frame
-	void Update () {
+    public int healthBonus = 5;
+
+
+    // Update is called once per frame
+    void Update () {
 
         if (health > maxHealth)
         health = maxHealth;
@@ -89,6 +91,14 @@ public class PlayerMovement1 : MonoBehaviour {
             canTakeDamage = false;
             StartCoroutine("HitCoolDown");
             health--;
+        }
+
+        if (collision.gameObject.name == "health object")
+        {
+            Destroy(collision.gameObject);
+            health = health + healthBonus;
+            if (health > maxHealth)
+                health = maxHealth;
         }
     }
 
