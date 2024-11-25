@@ -16,12 +16,15 @@ public class NewBehaviourScript : MonoBehaviour
     public Slider healthbar;
     public NavMeshAgent agent;
     public PlayerMovement1 player;
-    public float dismaz;
+    public float dismaz = 10;
     public float dismin;
     public Transform Player;
-    public bool insightrange;
+    public bool insightrange = false;
     public LayerMask PlayerLayer;
     public Vector2 Playerloco;
+    public int speed = 5;
+    public bool left=true ;
+    public bool right= false;
 
     public GameObject attack1HB;
     public float attackTimer = 10;
@@ -29,33 +32,22 @@ public class NewBehaviourScript : MonoBehaviour
     public int attackNumber = 0;
     
 
-    public void DetectPlayer()
-    {
-        insightrange = false;
-            
-        foreach(var collider in Physics2D.OverlapCircleAll(transform.position, dismaz, PlayerLayer))
-        {
-            Playerloco = collider.transform.position;
-            insightrange = true;
-
-
-        }
-    }
+    
     // Start is called before the first frame update
     void Start()
     {
         attack1HB.SetActive(false);
 
         health = maxHealth;
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
+        
+        
     }
 
-    // Update is called once per frame
+    // Update is called once per frame SKibidi
     void Update()
     {
+        DetectPlayer();
+
         if (attackTimer > 0)
         {
             attackTimer -= Time.deltaTime;
@@ -84,6 +76,16 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 StartCoroutine("FailedAttackWait");
             }
+        }
+
+        if (insightrange == true)
+        {
+
+        }
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -115,6 +117,17 @@ public class NewBehaviourScript : MonoBehaviour
         attack1HB.SetActive(false);
         attackNumber = 0;
     }
-    
+    public void DetectPlayer()
+    {
+            
+        foreach(var collider in Physics2D.OverlapCircleAll(transform.position, dismaz, PlayerLayer))
+        {
+            Playerloco = collider.transform.position;
+            insightrange = true;
+            
+
+
+        }
+    }
 }
 
