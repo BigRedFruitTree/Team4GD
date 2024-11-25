@@ -14,6 +14,7 @@ public class bossattacking : MonoBehaviour
     public bossmovement move;
     private int Mult = 0;
     private int Multileft = 0;
+    public int Multileft1;
     private float timetillstop = 2;
     // Start is called before the first frame update
     void OnEnable()
@@ -63,7 +64,7 @@ public class bossattacking : MonoBehaviour
     void multishot()
     {
      Mult = 1;
-     Multileft = 3;
+     Multileft = Multileft1;
     }
     void shoot()
     {

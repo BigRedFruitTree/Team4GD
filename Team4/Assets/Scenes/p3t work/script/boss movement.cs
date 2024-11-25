@@ -11,6 +11,7 @@ public class bossmovement : MonoBehaviour {
     [SerializeField]
 	public float frequency;
     public float frequencyredo;
+
     [SerializeField]
 	public float magnitude;
     public float magnituderedo;
