@@ -16,16 +16,31 @@ public class NewBehaviourScript : MonoBehaviour
     public Slider healthbar;
     public NavMeshAgent agent;
     public PlayerMovement1 player;
-    public int DistMin = 10;
-    public int DistMax = 15;
+    public float dismaz;
+    public float dismin;
     public Transform Player;
-
+    public bool insightrange;
+    public LayerMask PlayerLayer;
+    public Vector2 Playerloco;
 
     public GameObject attack1HB;
     public float attackTimer = 10;
     public bool bossAtacking = false;
     public int attackNumber = 0;
+    
 
+    public void DetectPlayer()
+    {
+        insightrange = false;
+            
+        foreach(var collider in Physics2D.OverlapCircleAll(transform.position, dismaz, PlayerLayer))
+        {
+            Playerloco = collider.transform.position;
+            insightrange = true;
+
+
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -36,10 +51,6 @@ public class NewBehaviourScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        player = GameObject.Find("Player").GetComponent<PlayerMovement1>();
-        gm = GameObject.Find("game manager").GetComponent<GameManager>();
-        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -73,16 +84,6 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 StartCoroutine("FailedAttackWait");
             }
-        }
-
-        if (attackTimer >= 0)
-        {
-            float distanceToPlayer = Vector2.Distance(transform.position, Player.position);
-            if (distanceToPlayer <= DistMax)
-            {
-                agent.destination = player.transform.position;
-            }
-
         }
     }
 
