@@ -17,7 +17,7 @@ public class turnoffonwep : MonoBehaviour
     {
         spriteSquare = gameObject.GetComponent<SpriteRenderer>();
         attackAreaCollider = gameObject.GetComponent<BoxCollider2D>();
-        character = GameObject.Find("blue_0").GetComponent<CharacterController2D>();
+        character = GameObject.Find("blue_0 1").GetComponent<CharacterController2D>();
     }
 
     // Update is called once per frame
