@@ -102,6 +102,8 @@ public class PlayerMovement1 : MonoBehaviour {
         }
     }
 
+    
+
     IEnumerator HitCoolDown()
     {
         yield return new WaitForSeconds(1f);
