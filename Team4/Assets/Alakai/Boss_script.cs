@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 using Vector2 = UnityEngine.Vector2;
+using Unity.VisualScripting;
 
 
 
@@ -36,9 +37,14 @@ public class NewBehaviourScript : MonoBehaviour
     public float attackTimer = 10;
     public bool bossAtacking = false;
     public int attackNumber = 0;
-    
+    // found some rng code online, we can use it as a base for later
+    // Random rnd = new Random();
+    //int month = rnd.Next(1, 13);   creates a number between 1 and 12
+    //int dice = rnd.Next(1, 7);    creates a number between 1 and 6
+    //int card   = rnd.Next(52);     // creates a number between 0 and 51
 
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -158,6 +164,5 @@ public class NewBehaviourScript : MonoBehaviour
         }
 		transform.localScale = localScale;
     }
-
 }
 
