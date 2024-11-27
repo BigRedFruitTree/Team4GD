@@ -23,11 +23,15 @@ public class NewBehaviourScript : MonoBehaviour
     public bool insightrange = false;
     public LayerMask PlayerLayer;
     public Vector2 Playerloco;
-    public Transform PlayerTr;
     public Transform Boss1;
+    public Transform Middle;
     public int speed = 5;
     public bool right = false;
-
+    public Vector3 pos;
+    public Vector3 localScale;
+    
+    
+    [Header("Attack")]
     public GameObject attack1HB;
     public float attackTimer = 10;
     public bool bossAtacking = false;
@@ -41,12 +45,15 @@ public class NewBehaviourScript : MonoBehaviour
         attack1HB.SetActive(false);
 
         health = maxHealth;
-
+        
+       
+        localScale = transform.localScale;
     }
 
     // Update is called once per frame SKibidi
     void Update()
     {
+        
         DetectPlayer();
 
         if (attackTimer > 0)
@@ -81,13 +88,21 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (insightrange == true)
         {
-            
+           CheckFacing();
+           if(right == true) 
+           {
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
+           } else 
+           {
+                transform.Translate(Vector2.left * speed * Time.deltaTime);
+           }
         }
 
         if (health <= 0)
         {
             Destroy(gameObject);
         }
+        pos = transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -127,5 +142,22 @@ public class NewBehaviourScript : MonoBehaviour
             insightrange = true;
         }
     }
+
+    public void CheckFacing() 
+    {
+        if (Player.position.x < Middle.position.x) 
+        {
+              right = false; 
+        } else if (Player.position.x > Middle.position.x)
+        {
+			 right = true;
+        }
+        if (((right) && (localScale.x > 0)) || ((!right) && (localScale.x < 0))) 
+        {
+          localScale.x *= -1;
+        }
+		transform.localScale = localScale;
+    }
+
 }
 
