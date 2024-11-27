@@ -42,6 +42,16 @@ public class NewBehaviourScript : MonoBehaviour
     //int month = rnd.Next(1, 13);   creates a number between 1 and 12
     //int dice = rnd.Next(1, 7);    creates a number between 1 and 6
     //int card   = rnd.Next(52);     // creates a number between 0 and 51
+    //Function to get random number
+    //private static readonly Random getrandom = new Random();
+
+    //public static int GetRandomNumber(int min, int max)
+    //{
+       // lock (getrandom) // synchronize
+       // {
+            //return getrandom.Next(min, max);
+       // }
+   // }
 
 
 
