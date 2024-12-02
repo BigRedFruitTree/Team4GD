@@ -21,7 +21,6 @@ public class PlayerMovement1 : MonoBehaviour {
 
     public int healthBonus = 5;
 
-
     // Update is called once per frame
     void Update () {
 
@@ -100,10 +99,9 @@ public class PlayerMovement1 : MonoBehaviour {
             if (health > maxHealth)
                 health = maxHealth;
         }
+
     }
-
-    
-
+   
     IEnumerator HitCoolDown()
     {
         yield return new WaitForSeconds(1f);

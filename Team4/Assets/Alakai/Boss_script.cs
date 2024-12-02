@@ -25,48 +25,32 @@ public class NewBehaviourScript : MonoBehaviour
     public LayerMask PlayerLayer;
     public Vector2 Playerloco;
     public Transform Boss1;
-    public Transform Middle;
     public int speed = 5;
     public bool right = false;
     public Vector3 pos;
     public Vector3 localScale;
-    
-    
+    public GameObject PlayerGame;
+
+
     [Header("Attack")]
     public GameObject attack1HB;
     public float attackTimer = 10;
     public bool bossAtacking = false;
     public int attackNumber = 0;
-    // found some rng code online, we can use it as a base for later
-    // Random rnd = new Random();
-    //int month = rnd.Next(1, 13);   creates a number between 1 and 12
-    //int dice = rnd.Next(1, 7);    creates a number between 1 and 6
-    //int card   = rnd.Next(52);     // creates a number between 0 and 51
-    //Function to get random number
-    //private static readonly Random getrandom = new Random();
-
-    //public static int GetRandomNumber(int min, int max)
-    //{
-       // lock (getrandom) // synchronize
-       // {
-            //return getrandom.Next(min, max);
-       // }
-   // }
-
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
         attack1HB.SetActive(false);
 
         health = maxHealth;
-        
-       
+
+        PlayerGame = GameObject.Find("blue_0");       
+
         localScale = transform.localScale;
     }
 
-    // Update is called once per frame SKibidi
+    // Update is called once per frame 
     void Update()
     {
         
@@ -104,14 +88,15 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (insightrange == true)
         {
-           CheckFacing();
-           if(right == true) 
-           {
+            CheckFacing();
+            if (right == true)
+            {
                 transform.Translate(Vector2.right * speed * Time.deltaTime);
-           } else 
-           {
+            }
+            if (right == false)
+            {
                 transform.Translate(Vector2.left * speed * Time.deltaTime);
-           }
+            }
         }
 
         if (health <= 0)
@@ -135,20 +120,20 @@ public class NewBehaviourScript : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         bossAtacking = false;
-        attackTimer = 10;
+        attackTimer = 3;
         attack1HB.SetActive(false);
     }
-
 
     IEnumerator FailedAttackWait()
     {
 
         yield return new WaitForSeconds(1f);
-        bossAtacking = false;
-        attackTimer = 10;
+        bossAtacking = false;       
+        attackTimer = 3;
         attack1HB.SetActive(false);
         attackNumber = 0;
     }
+
     public void DetectPlayer()
     {
             
@@ -161,16 +146,15 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void CheckFacing() 
     {
-        if (Player.position.x < Middle.position.x) 
-        {
-              right = false; 
-        } else if (Player.position.x > Middle.position.x)
-        {
-			 right = true;
-        }
+        if (Player.position.x < Boss1.position.x)
+            right = false;
+
+        if (Player.position.x > Boss1.position.x)
+            right = true;
+
         if (((right) && (localScale.x > 0)) || ((!right) && (localScale.x < 0))) 
         {
-          localScale.x *= -1;
+           localScale.x *= -1;
         }
 		transform.localScale = localScale;
     }
