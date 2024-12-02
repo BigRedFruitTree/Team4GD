@@ -9,7 +9,7 @@ public class bossstings : MonoBehaviour
     private float bullettime;
     public float tillnext = 2f;
 
-    // Start is called before the first frame update
+    // OnEnable is called before the first frame Everytime
     void OnEnable()
     {
         this.GetComponent<bossattacking>().enabled = false;

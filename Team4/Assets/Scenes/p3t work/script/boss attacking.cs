@@ -4,22 +4,39 @@ using UnityEngine;
 
 public class bossattacking : MonoBehaviour
 {
-    enum AttackType { multishot, sweap }
+    enum AttackType { multishot, BIGSHOT }
     [SerializeField] private AttackType attacktype;
+    // starting: 1 = BIGSHOT 2 = multishot
+    public int attack = 1;
     public GameObject stinger;
     public Transform stingpos;
-    public float firerate;
-    public float firerateNext;
-    public float Multtime = 1;
+    private float firerate;
+    public float firerateBIGNext;
+    public float fireratemultiNext;
+    public float Multtime;
     public bossmovement move;
     private int Mult = 0;
     private int Multileft = 0;
     public int Multileft1;
-    private float timetillstop = 2;
-    // Start is called before the first frame update
+    public int Multileft2;
+    private float timetillstop;
+    public float timetillstopNext;
+    // OnEnable is called before the first frame Everytime
     void OnEnable()
     {
-        timetillstop = 2;
+        if (attack == 1)
+        {
+            attacktype = AttackType.BIGSHOT;
+            attack = 2;
+            firerate = firerateBIGNext;
+        }
+        else
+        {
+            attacktype = AttackType.multishot;
+            attack = 1;
+            firerate = fireratemultiNext;
+        }
+        timetillstop = timetillstopNext;
         Multileft = 1;
         this.GetComponent<bossstings>().enabled = false;
         move.moveSpeed = 0f;
@@ -48,7 +65,14 @@ public class bossattacking : MonoBehaviour
             {
             Multileft--;
             shoot();
-            firerate = firerateNext;
+             if (attacktype == AttackType.BIGSHOT)
+             {
+                  firerate = firerateBIGNext;
+             }
+                if (attacktype == AttackType.multishot)
+                {
+                    firerate = fireratemultiNext;
+                }
             }
         }
     if (Multileft <= 0)
@@ -63,8 +87,15 @@ public class bossattacking : MonoBehaviour
     }
     void multishot()
     {
-     Mult = 1;
-     Multileft = Multileft1;
+        Mult = 1;
+        if (attacktype == AttackType.BIGSHOT)
+        {
+            Multileft = Multileft1;
+        }
+        if (attacktype == AttackType.multishot)
+        {
+            Multileft = Multileft2;
+        }
     }
     void shoot()
     {
