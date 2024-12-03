@@ -17,9 +17,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         pausemenu.SetActive(false);
-
-        
-
     }
 
     //this note

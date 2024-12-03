@@ -100,6 +100,20 @@ public class PlayerMovement1 : MonoBehaviour {
             if (health > maxHealth)
                 health = maxHealth;
         }
+
+        if (collision.gameObject.name == "stinger prefab(Clone)" && canTakeDamage == true)
+        {
+            canTakeDamage = false;
+            StartCoroutine("HitCoolDown");
+            health--;
+        }
+
+        if (collision.gameObject.name == "b" && canTakeDamage == true)
+        {
+            canTakeDamage = false;
+            StartCoroutine("HitCoolDown");
+            health--;
+        }
     }
    
     private void OnCollisionEnter2D(Collision2D collision) 
