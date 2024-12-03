@@ -36,17 +36,26 @@ public class NewBehaviourScript : MonoBehaviour
     public Vector3 localScale;
     public GameObject PlayerGame;
     private BoxCollider2D BossCollider;
+    private int Active = 1;
+    private float StunLength;
+    public float StunLengthSet;
 
 
     [Header("Attack")]
     public GameObject attack1HB;
-    public float attackTimer = 10;
+    private float attackTimer;
+    public float attackTimerSet;
     public bool bossAtacking = false;
     public int attackNumber = 0;
-    
+    private float StunTimer;
+    public float StunTimerSet;
+    private int StunNumber = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+        attackTimer = attackTimerSet;
+        StunTimer = StunTimerSet;
         attack1HB.SetActive(false);
 
         health = maxHealth;
@@ -61,7 +70,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame 
     void Update()
     {
-        
+
         DetectPlayer();
 
         if (attackTimer > 0)
@@ -79,6 +88,39 @@ public class NewBehaviourScript : MonoBehaviour
             attackNumber = Random.Range(1, 3);
         }
 
+        if (StunTimer <= 0 && StunNumber == 0)
+        {
+            StunNumber = Random.Range(1, 3);
+        }
+
+        if (StunNumber == 3)
+        {
+            Stuneffect();
+        }
+        
+        if (StunNumber == 1)
+        {
+            StunNumber = 0;
+            StunTimer = StunTimerSet;
+        }
+        if (StunNumber == 2)
+        {
+            StunNumber = 0;
+            StunTimer = StunTimerSet;
+        }
+
+        //rework this
+        if (StunLength > 0)
+        {
+           StunLength -= Time.deltaTime;
+        }
+        else
+        {
+            attackTimer = attackTimerSet;
+            Active = 1;
+            StunTimer = StunTimerSet;
+
+        }
 
         if (attackTimer <= 0 && bossAtacking == false)
         {
@@ -94,16 +136,19 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
 
-        if (insightrange == true)
+        if (Active == 1)
         {
-            CheckFacing();
-            if (right == true)
+            if (insightrange == true)
             {
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
-            }
-            if (right == false)
-            {
-                transform.Translate(Vector2.left * speed * Time.deltaTime);
+                CheckFacing();
+                if (right == true)
+                {
+                    transform.Translate(Vector2.right * speed * Time.deltaTime);
+                }
+                if (right == false)
+                {
+                    transform.Translate(Vector2.left * speed * Time.deltaTime);
+                }
             }
         }
 
@@ -180,6 +225,13 @@ public class NewBehaviourScript : MonoBehaviour
            localScale.x *= -1;
         }
 		transform.localScale = localScale;
+    }
+    void Stuneffect()
+    {
+        attackTimer = 1000000;
+        bossAtacking = false;
+        Active = 0;
+        StunLength = StunLengthSet;
     }
 }
 

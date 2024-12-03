@@ -1801,10 +1801,12 @@ MonoBehaviour:
   pos: {x: 0, y: 0, z: 0}
   localScale: {x: 0, y: 0, z: 0}
   PlayerGame: {fileID: 0}
+  StunLengthSet: 5
   attack1HB: {fileID: 19427338}
-  attackTimer: 3
+  attackTimerSet: 10
   bossAtacking: 0
   attackNumber: 0
+  StunTimerSet: 5
 --- !u!61 &1503889613
 BoxCollider2D:
   m_ObjectHideFlags: 0
