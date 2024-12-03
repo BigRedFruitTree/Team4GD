@@ -25,8 +25,8 @@ public class bossmovement : MonoBehaviour {
 
 	Vector3 pos, localScale;
 
-    [SerializeField] public int health = 30;
-    private int maxHealth = 30;
+    [SerializeField] public int health = 12;
+    private int maxHealth = 12;
     public Slider healthbar;
     public bool canTakeDamage = true;
 
