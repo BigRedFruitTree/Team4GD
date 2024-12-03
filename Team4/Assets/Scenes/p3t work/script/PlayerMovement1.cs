@@ -7,12 +7,15 @@ public class PlayerMovement1 : MonoBehaviour {
     public CharacterController2D controller;
     public GameObject nailPos;
     public GameObject Nail;
+    private GameObject Player;
+    private Rigidbody2D PlayerRB;
 
     public int health = 10;
     public int maxHealth = 10;
     public bool canTakeDamage = true;
 
     public float runSpeed = 40f;
+    public float knockbackForce = 1000f;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -20,6 +23,12 @@ public class PlayerMovement1 : MonoBehaviour {
     int jumpsMax = 2;
 
     public int healthBonus = 5;
+
+    private void Start()
+    {
+        Player = GameObject.Find("blue_0");
+        PlayerRB = GameObject.Find("blue_0").GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update () {

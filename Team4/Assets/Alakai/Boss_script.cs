@@ -13,9 +13,12 @@ public class NewBehaviourScript : MonoBehaviour
 {
     public GameManager gm;
     //THIS IS FOR THE LEVEL 2 BOSS!!
+    [Header("Health")]
     public int health = 50;
     public int maxHealth = 50;
     public Slider healthbar;
+
+    [Header("Player Stuff")]
     public NavMeshAgent agent;
     public PlayerMovement1 player;
     public float dismaz = 10;
@@ -24,12 +27,15 @@ public class NewBehaviourScript : MonoBehaviour
     public bool insightrange = false;
     public LayerMask PlayerLayer;
     public Vector2 Playerloco;
+
+    [Header("Movement")]
     public Transform Boss1;
     public int speed = 5;
     public bool right = false;
     public Vector3 pos;
     public Vector3 localScale;
     public GameObject PlayerGame;
+    private BoxCollider2D BossCollider;
 
 
     [Header("Attack")]
@@ -48,6 +54,8 @@ public class NewBehaviourScript : MonoBehaviour
         PlayerGame = GameObject.Find("blue_0");       
 
         localScale = transform.localScale;
+
+        BossCollider = GameObject.Find("Boss").GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame 
@@ -106,6 +114,15 @@ public class NewBehaviourScript : MonoBehaviour
         pos = transform.position;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            BossCollider.isTrigger = true;
+            StartCoroutine("BossCollidesWithPlayer");
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Nail")
@@ -132,6 +149,12 @@ public class NewBehaviourScript : MonoBehaviour
         attackTimer = 3;
         attack1HB.SetActive(false);
         attackNumber = 0;
+    }
+
+    IEnumerator BossCollidesWithPlayer()
+    {
+        yield return new WaitForSeconds(2f);
+        BossCollider.isTrigger = false;
     }
 
     public void DetectPlayer()

@@ -938,6 +938,7 @@ MonoBehaviour:
   maxHealth: 10
   canTakeDamage: 1
   runSpeed: 40
+  knockbackForce: 20
   jumps: 2
   healthBonus: 5
 --- !u!58 &980503586
