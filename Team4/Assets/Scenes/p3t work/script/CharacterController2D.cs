@@ -35,6 +35,7 @@ public class CharacterController2D : MonoBehaviour
     void Update()
     {
         playerMovementScript = GetComponent<PlayerMovement1>();
+        
     }
 
 
@@ -122,7 +123,7 @@ public class CharacterController2D : MonoBehaviour
 	public void OnTriggerEnter2D(Collider2D collision)
 	{
 
-		if (collision.gameObject.tag == "DOOR")
+		if (collision.gameObject.name == "DOOR")
 		{
 			gm.LoadLevel(2);
 		}
