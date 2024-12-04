@@ -934,6 +934,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   nailPos: {fileID: 0}
   Nail: {fileID: 0}
+  endScreen: {fileID: 0}
   health: 10
   maxHealth: 10
   canTakeDamage: 1
@@ -1876,7 +1877,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
+  m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
