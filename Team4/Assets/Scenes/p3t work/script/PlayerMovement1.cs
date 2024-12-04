@@ -37,8 +37,10 @@ public class PlayerMovement1 : MonoBehaviour {
         health = maxHealth;
 
         if (health <= 0)
-            Destroy(gameObject);
+        {
 
+        }
+    
         controller = GetComponent<CharacterController2D>();
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
