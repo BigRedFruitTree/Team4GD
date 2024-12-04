@@ -49,7 +49,7 @@ public class NewBehaviourScript : MonoBehaviour
     public int attackNumber = 0;
     private float StunTimer;
     public float StunTimerSet;
-    private int StunNumber = 0;
+    private int StunNumber;
 
     // Start is called before the first frame update
     void Start()
@@ -88,34 +88,29 @@ public class NewBehaviourScript : MonoBehaviour
             attackNumber = Random.Range(1, 3);
         }
 
-        if (StunTimer <= 0 && StunNumber == 0)
+        if (StunTimer > 0)
         {
-            StunNumber = Random.Range(1, 3);
+            StunTimer -= Time.deltaTime;
         }
 
-        if (StunNumber == 3)
+        if (StunTimer <= 0)
+        {
+            StunNumber = 1;
+            StunTimer = StunTimerSet;
+        }
+
+        if (StunNumber == 1)
         {
             Stuneffect();
         }
-        
-        if (StunNumber == 1)
-        {
-            StunNumber = 0;
-            StunTimer = StunTimerSet;
-        }
-        if (StunNumber == 2)
-        {
-            StunNumber = 0;
-            StunTimer = StunTimerSet;
-        }
 
-        //rework this
         if (StunLength > 0)
         {
-           StunLength -= Time.deltaTime;
+            StunLength -= Time.deltaTime;
         }
-        else
+        else if (StunLength < 0)
         {
+            StunLength = 1000000;
             attackTimer = attackTimerSet;
             Active = 1;
             StunTimer = StunTimerSet;
@@ -229,10 +224,14 @@ public class NewBehaviourScript : MonoBehaviour
     }
     void Stuneffect()
     {
+        StunNumber = 0;
         attackTimer = 1000000;
         bossAtacking = false;
         Active = 0;
         StunLength = StunLengthSet;
+        StunTimer = 1000000;
+        Debug.Log("Stun Effect work");
     }
+
 }
 
