@@ -126,7 +126,6 @@ public class CharacterController2D : MonoBehaviour
 		{
 			gm.LoadLevel(2);
 		}
-
 		if (collision.gameObject.tag == "HIVE")
 		{
 			gm.LoadLevel(4);
