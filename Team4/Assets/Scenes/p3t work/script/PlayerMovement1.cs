@@ -9,6 +9,7 @@ public class PlayerMovement1 : MonoBehaviour {
     public GameObject Nail;
     private GameObject Player;
     private Rigidbody2D PlayerRB;
+    public GameObject endScreen;
 
     public int health = 10;
     public int maxHealth = 10;
@@ -24,6 +25,8 @@ public class PlayerMovement1 : MonoBehaviour {
 
     public int healthBonus = 5;
 
+    private bool endScreenShown = false;
+
     private void Start()
     {
         Player = GameObject.Find("blue_0");
@@ -38,7 +41,8 @@ public class PlayerMovement1 : MonoBehaviour {
 
         if (health <= 0)
         {
-
+            endScreen.SetActive(true);
+            endScreenShown = true;
         }
     
         controller = GetComponent<CharacterController2D>();
@@ -97,10 +101,14 @@ public class PlayerMovement1 : MonoBehaviour {
 
         if (collision.gameObject.name == "health object")
         {
-            Destroy(collision.gameObject);
-            health = health + healthBonus;
-            if (health > maxHealth)
-                health = maxHealth;
+            if (endScreenShown == true)
+            {
+                 Destroy(collision.gameObject);
+                 health = health + healthBonus;
+                if (health > maxHealth)
+                   health = maxHealth;
+            }
+           
         }
 
         if (collision.gameObject.name == "stinger prefab(Clone)" && canTakeDamage == true)

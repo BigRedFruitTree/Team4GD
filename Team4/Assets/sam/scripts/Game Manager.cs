@@ -71,7 +71,13 @@ public class GameManager : MonoBehaviour
     void RestartLevel()
     {
         LoadLevel(SceneManager.GetActiveScene().buildIndex);
+
+        
     }
     
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
 }
