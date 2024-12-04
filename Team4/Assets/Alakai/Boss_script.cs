@@ -150,7 +150,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-      
+            gm.LoadLevel(3);
         }
         pos = transform.position;
     }
