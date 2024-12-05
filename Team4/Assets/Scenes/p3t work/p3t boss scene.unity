@@ -1954,6 +1954,22 @@ PrefabInstance:
       propertyPath: m_Type
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2554250738956571478, guid: 3213f3feaca27b54da25a94b80ad15c9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 2554250738956571478, guid: 3213f3feaca27b54da25a94b80ad15c9, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554250738956571478, guid: 3213f3feaca27b54da25a94b80ad15c9, type: 3}
+      propertyPath: m_FillMethod
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556737258942351403, guid: 3213f3feaca27b54da25a94b80ad15c9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -166
+      objectReference: {fileID: 0}
     - target: {fileID: 3186315567733777364, guid: 3213f3feaca27b54da25a94b80ad15c9, type: 3}
       propertyPath: m_text
       value: 'Paused
