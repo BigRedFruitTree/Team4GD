@@ -31,8 +31,6 @@ public class PlayerMovement1 : MonoBehaviour {
     {
         Player = GameObject.Find("blue_0");
         PlayerRB = GameObject.Find("blue_0").GetComponent<Rigidbody2D>();
-        Player = GameObject.Find("blue_0 1");
-        PlayerRB = GameObject.Find("blue_0 1").GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
