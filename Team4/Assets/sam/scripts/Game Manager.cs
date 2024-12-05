@@ -17,9 +17,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         pausemenu.SetActive(false);
-
-        
-
     }
 
     //this note
@@ -74,7 +71,13 @@ public class GameManager : MonoBehaviour
     void RestartLevel()
     {
         LoadLevel(SceneManager.GetActiveScene().buildIndex);
+
+        
     }
     
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
 }

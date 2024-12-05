@@ -1,6 +1,7 @@
 ﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class bossmovement : MonoBehaviour {
 
@@ -24,10 +25,15 @@ public class bossmovement : MonoBehaviour {
 
 	Vector3 pos, localScale;
 
-	// Use this for initialization
-	void Start ()
-    {
+    [SerializeField] public int health = 12;
+    private int maxHealth = 12;
+    public Slider healthbar;
+    public bool canTakeDamage = true;
 
+    // Use this for initialization
+    void Start ()
+    {
+        health = maxHealth;
         pos = transform.position;
 
 		localScale = transform.localScale;
@@ -53,7 +59,12 @@ public class bossmovement : MonoBehaviour {
             timeuntilattack = 0;
         }
 
-	}
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+    }
 
 	void CheckWhereToFace()
 	{
@@ -82,4 +93,20 @@ public class bossmovement : MonoBehaviour {
 		transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
 	}
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Nail" && canTakeDamage == true)
+        {
+            canTakeDamage = false;
+            health--;
+            healthbar.value = health;
+            StartCoroutine("HitCoolDown");
+        }
+    }
+
+    IEnumerator HitCoolDown()
+    {
+        yield return new WaitForSeconds(1f);
+        canTakeDamage = true;
+    }
 }

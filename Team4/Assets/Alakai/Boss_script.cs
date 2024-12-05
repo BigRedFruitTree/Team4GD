@@ -13,9 +13,12 @@ public class NewBehaviourScript : MonoBehaviour
 {
     public GameManager gm;
     //THIS IS FOR THE LEVEL 2 BOSS!!
+    [Header("Health")]
     public int health = 50;
     public int maxHealth = 50;
     public Slider healthbar;
+
+    [Header("Player Stuff")]
     public NavMeshAgent agent;
     public PlayerMovement1 player;
     public float dismaz = 10;
@@ -24,23 +27,35 @@ public class NewBehaviourScript : MonoBehaviour
     public bool insightrange = false;
     public LayerMask PlayerLayer;
     public Vector2 Playerloco;
+
+    [Header("Movement")]
     public Transform Boss1;
     public int speed = 5;
     public bool right = false;
     public Vector3 pos;
     public Vector3 localScale;
     public GameObject PlayerGame;
+    private BoxCollider2D BossCollider;
+    private int Active = 1;
+    private float StunLength;
+    public float StunLengthSet;
 
 
     [Header("Attack")]
     public GameObject attack1HB;
-    public float attackTimer = 10;
+    private float attackTimer;
+    public float attackTimerSet;
     public bool bossAtacking = false;
     public int attackNumber = 0;
-    
+    private float StunTimer;
+    public float StunTimerSet;
+    private int StunNumber;
+
     // Start is called before the first frame update
     void Start()
     {
+        attackTimer = attackTimerSet;
+        StunTimer = StunTimerSet;
         attack1HB.SetActive(false);
 
         health = maxHealth;
@@ -48,12 +63,14 @@ public class NewBehaviourScript : MonoBehaviour
         PlayerGame = GameObject.Find("blue_0");       
 
         localScale = transform.localScale;
+
+        BossCollider = GameObject.Find("Boss").GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame 
     void Update()
     {
-        
+
         DetectPlayer();
 
         if (attackTimer > 0)
@@ -71,6 +88,34 @@ public class NewBehaviourScript : MonoBehaviour
             attackNumber = Random.Range(1, 3);
         }
 
+        if (StunTimer > 0)
+        {
+            StunTimer -= Time.deltaTime;
+        }
+
+        if (StunTimer <= 0)
+        {
+            StunNumber = 1;
+            StunTimer = StunTimerSet;
+        }
+
+        if (StunNumber == 1)
+        {
+            Stuneffect();
+        }
+
+        if (StunLength > 0)
+        {
+            StunLength -= Time.deltaTime;
+        }
+        else if (StunLength < 0)
+        {
+            StunLength = 1000000;
+            attackTimer = attackTimerSet;
+            Active = 1;
+            StunTimer = StunTimerSet;
+
+        }
 
         if (attackTimer <= 0 && bossAtacking == false)
         {
@@ -86,24 +131,37 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
 
-        if (insightrange == true)
+        if (Active == 1)
         {
-            CheckFacing();
-            if (right == true)
+            if (insightrange == true)
             {
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
-            }
-            if (right == false)
-            {
-                transform.Translate(Vector2.left * speed * Time.deltaTime);
+                CheckFacing();
+                if (right == true)
+                {
+                    transform.Translate(Vector2.right * speed * Time.deltaTime);
+                }
+                if (right == false)
+                {
+                    transform.Translate(Vector2.left * speed * Time.deltaTime);
+                }
             }
         }
 
         if (health <= 0)
         {
             Destroy(gameObject);
+            gm.LoadLevel(3);
         }
         pos = transform.position;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            BossCollider.isTrigger = true;
+            StartCoroutine("BossCollidesWithPlayer");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -134,6 +192,12 @@ public class NewBehaviourScript : MonoBehaviour
         attackNumber = 0;
     }
 
+    IEnumerator BossCollidesWithPlayer()
+    {
+        yield return new WaitForSeconds(2f);
+        BossCollider.isTrigger = false;
+    }
+
     public void DetectPlayer()
     {
             
@@ -158,5 +222,16 @@ public class NewBehaviourScript : MonoBehaviour
         }
 		transform.localScale = localScale;
     }
+    void Stuneffect()
+    {
+        StunNumber = 0;
+        attackTimer = 1000000;
+        bossAtacking = false;
+        Active = 0;
+        StunLength = StunLengthSet;
+        StunTimer = 1000000;
+        Debug.Log("Stun Effect work");
+    }
+
 }
 

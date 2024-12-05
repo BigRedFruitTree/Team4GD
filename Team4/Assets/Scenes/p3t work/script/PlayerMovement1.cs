@@ -7,12 +7,16 @@ public class PlayerMovement1 : MonoBehaviour {
     public CharacterController2D controller;
     public GameObject nailPos;
     public GameObject Nail;
+    private GameObject Player;
+    private Rigidbody2D PlayerRB;
+    public GameObject endScreen;
 
     public int health = 10;
     public int maxHealth = 10;
     public bool canTakeDamage = true;
 
     public float runSpeed = 40f;
+    public float knockbackForce = 1000f;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -21,6 +25,16 @@ public class PlayerMovement1 : MonoBehaviour {
 
     public int healthBonus = 5;
 
+    private bool endScreenShown = false;
+
+    private void Start()
+    {
+        Player = GameObject.Find("blue_0");
+        PlayerRB = GameObject.Find("blue_0").GetComponent<Rigidbody2D>();
+        Player = GameObject.Find("blue_0 1");
+        PlayerRB = GameObject.Find("blue_0 1").GetComponent<Rigidbody2D>();
+    }
+
     // Update is called once per frame
     void Update () {
 
@@ -28,8 +42,11 @@ public class PlayerMovement1 : MonoBehaviour {
         health = maxHealth;
 
         if (health <= 0)
-            Destroy(gameObject);
-
+        {
+            endScreen.SetActive(true);
+            endScreenShown = true;
+        }
+    
         controller = GetComponent<CharacterController2D>();
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -86,10 +103,28 @@ public class PlayerMovement1 : MonoBehaviour {
 
         if (collision.gameObject.name == "health object")
         {
-            Destroy(collision.gameObject);
-            health = health + healthBonus;
-            if (health > maxHealth)
-                health = maxHealth;
+            if (endScreenShown == true)
+            {
+                 Destroy(collision.gameObject);
+                 health = health + healthBonus;
+                if (health > maxHealth)
+                   health = maxHealth;
+            }
+           
+        }
+
+        if (collision.gameObject.name == "stinger prefab(Clone)" && canTakeDamage == true)
+        {
+            canTakeDamage = false;
+            StartCoroutine("HitCoolDown");
+            health--;
+        }
+
+        if (collision.gameObject.name == "b" && canTakeDamage == true)
+        {
+            canTakeDamage = false;
+            StartCoroutine("HitCoolDown");
+            health--;
         }
     }
    

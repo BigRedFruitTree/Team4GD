@@ -42,6 +42,10 @@ public class bossattacking : MonoBehaviour
         move.moveSpeed = 0f;
         move.magnitude = 0.2f;
     }
+    void OnDisable()
+    {
+        stinger.transform.localScale = new Vector3(1f, 1.25f, 1.25f);
+    }
 
     // Update is called once per frame
     void Update()
@@ -80,6 +84,7 @@ public class bossattacking : MonoBehaviour
             move.moveSpeed = move.moveSpeedredo;
             move.frequency = move.frequencyredo;
             move.magnitude = move.magnituderedo;
+            stinger.transform.localScale = new Vector3(1f, 1.25f, 1.25f);
             move.timeuntilattack = move.timeuntilattackredo;
             Mult = 0;
             this.GetComponent<bossstings>().enabled = true;
@@ -91,10 +96,12 @@ public class bossattacking : MonoBehaviour
         if (attacktype == AttackType.BIGSHOT)
         {
             Multileft = Multileft1;
+            stinger.transform.localScale = new Vector3(1.5f, 2f, 2f);
         }
         if (attacktype == AttackType.multishot)
         {
             Multileft = Multileft2;
+            stinger.transform.localScale = new Vector3(0.6f, 1.25f, 1.25f);
         }
     }
     void shoot()
