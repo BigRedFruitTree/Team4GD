@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement1 : MonoBehaviour {
 
+    public GameManager gm;
     public CharacterController2D controller;
     public GameObject nailPos;
     public GameObject Nail;
@@ -41,10 +43,9 @@ public class PlayerMovement1 : MonoBehaviour {
 
         if (health <= 0)
         {
-            endScreen.SetActive(true);
-            endScreenShown = true;
+            gm.;
         }
-    
+
         controller = GetComponent<CharacterController2D>();
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;

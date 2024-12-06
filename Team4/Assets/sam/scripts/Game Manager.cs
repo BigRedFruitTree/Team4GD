@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
                 }
 
             }
+
         }
     }
     public void Resume()
@@ -64,16 +65,16 @@ public class GameManager : MonoBehaviour
     }
 
    public void LoadLevel(int sceneID)
-    {
+   {
         SceneManager.LoadScene(sceneID);
-    }
+   }
 
-    void RestartLevel()
-    {
+     public void RestartLevel()
+     {
         LoadLevel(SceneManager.GetActiveScene().buildIndex);
 
         
-    }
+     }
     
     public void MainMenu()
     {

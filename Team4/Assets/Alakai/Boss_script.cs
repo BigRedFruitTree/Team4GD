@@ -47,6 +47,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float attackTimerSet;
     public bool bossAtacking = false;
     public int attackNumber = 0;
+
     private float StunTimer;
     public float StunTimerSet;
     private int StunNumber;
@@ -85,7 +86,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (attackTimer <= 0 && bossAtacking == false && attackNumber == 0)
         {
-            attackNumber = Random.Range(1, 3);
+            attackNumber = 1;
         }
 
         if (StunTimer > 0)
@@ -111,7 +112,7 @@ public class NewBehaviourScript : MonoBehaviour
         else if (StunLength < 0)
         {
             StunLength = 1000000;
-            attackTimer = attackTimerSet;
+            bossAtacking = false;
             Active = 1;
             StunTimer = StunTimerSet;
 
@@ -125,10 +126,7 @@ public class NewBehaviourScript : MonoBehaviour
                 StartCoroutine("AttackLength");
                 bossAtacking = true;
                 attackNumber = 0;
-            } else if (attackNumber == 2)
-            {
-                StartCoroutine("FailedAttackWait");
-            }
+            } 
         }
 
         if (Active == 1)
@@ -182,16 +180,6 @@ public class NewBehaviourScript : MonoBehaviour
         attack1HB.SetActive(false);
     }
 
-    IEnumerator FailedAttackWait()
-    {
-
-        yield return new WaitForSeconds(1f);
-        bossAtacking = false;       
-        attackTimer = 3;
-        attack1HB.SetActive(false);
-        attackNumber = 0;
-    }
-
     IEnumerator BossCollidesWithPlayer()
     {
         yield return new WaitForSeconds(2f);
@@ -225,12 +213,11 @@ public class NewBehaviourScript : MonoBehaviour
     void Stuneffect()
     {
         StunNumber = 0;
-        attackTimer = 1000000;
         bossAtacking = false;
         Active = 0;
         StunLength = StunLengthSet;
         StunTimer = 1000000;
-        Debug.Log("Stun Effect work");
+        
     }
 
 }
