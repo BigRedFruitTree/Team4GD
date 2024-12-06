@@ -11,12 +11,14 @@ public class GameManager : MonoBehaviour
     public PlayerMovement1 playerData;
     public Image healthBar;
     public GameObject pausemenu;
+    public GameObject gameoverScreen;
     public bool finished = false;
 
     // Start is called before the first frame update
     void Start()
     {
         pausemenu.SetActive(false);
+        gameoverScreen.SetActive(false);
     }
 
     //this note
@@ -44,7 +46,10 @@ public class GameManager : MonoBehaviour
                 }
 
             }
-
+            if(playerData.health <= 0)
+            {
+                gameoverScreen.SetActive(true);
+            }
         }
     }
     public void Resume()

@@ -43,7 +43,7 @@ public class PlayerMovement1 : MonoBehaviour {
 
         if (health <= 0)
         {
-            gm.;
+            Time.timeScale = 0;
         }
 
         controller = GetComponent<CharacterController2D>();

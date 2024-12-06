@@ -4994,7 +4994,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "W A S D to move.\nSpace to jump. \nDouble tap space bar to double jump.\nYou
-    can stick to walls by holding in the walls direction.\nPress F to Attack."
+    can stick to walls by holding in the walls direction.\nPress F to Attack.\nPress
+    ESC to Pause, and do it when restarting"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
