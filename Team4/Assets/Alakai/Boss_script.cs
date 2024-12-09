@@ -52,6 +52,8 @@ public class NewBehaviourScript : MonoBehaviour
     public float StunTimerSet;
     private int StunNumber;
 
+    private SpriteRenderer bossSprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +68,8 @@ public class NewBehaviourScript : MonoBehaviour
         localScale = transform.localScale;
 
         BossCollider = GameObject.Find("Boss").GetComponent<BoxCollider2D>();
+
+        bossSprite = GameObject.Find("Boss").GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame 
@@ -167,6 +171,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (collision.gameObject.name == "Nail")
         {
             health--;
+            StartCoroutine("OnHit");
             healthbar.value = health;
         }
     }
@@ -218,6 +223,13 @@ public class NewBehaviourScript : MonoBehaviour
         StunLength = StunLengthSet;
         StunTimer = 1000000;
         
+    }
+
+    IEnumerator OnHit()
+    {
+        bossSprite.color = new Color(1f, 1f, 1f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        bossSprite.color = new Color(1f, 1f, 1f, 1f);
     }
 
 }

@@ -14,6 +14,8 @@ public class FlyingEnemy : MonoBehaviour
 
     public float currentHealth = 2;
 
+    public SpriteRenderer enemySprite;
+
     Vector3 pos, localScale;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,8 @@ public class FlyingEnemy : MonoBehaviour
         pos = transform.position;
 
         localScale = transform.localScale;
+
+        enemySprite = GameObject.Find("EnemyFlying").GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -70,6 +74,7 @@ public class FlyingEnemy : MonoBehaviour
         if (collision.gameObject.name == "Nail")
         {
             currentHealth--;
+            StartCoroutine("OnHit");
 
         }
 
@@ -79,5 +84,12 @@ public class FlyingEnemy : MonoBehaviour
 
         }
 
+    }
+
+    IEnumerator OnHit()
+    {
+        enemySprite.color = new Color(1f, 1f, 1f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        enemySprite.color = new Color(1f, 1f, 1f, 1f);
     }
 }

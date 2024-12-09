@@ -30,6 +30,8 @@ public class bossmovement : MonoBehaviour {
     public Slider healthbar;
     public bool canTakeDamage = true;
 
+    private SpriteRenderer bossSprite;
+
     // Use this for initialization
     void Start ()
     {
@@ -37,8 +39,9 @@ public class bossmovement : MonoBehaviour {
         pos = transform.position;
 
 		localScale = transform.localScale;
+        bossSprite = GameObject.Find("b").GetComponent<SpriteRenderer>();
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -98,6 +101,7 @@ public class bossmovement : MonoBehaviour {
         if (collision.gameObject.name == "Nail" && canTakeDamage == true)
         {
             canTakeDamage = false;
+            StartCoroutine("OnHit");
             health--;
             healthbar.value = health;
             StartCoroutine("HitCoolDown");
@@ -108,5 +112,12 @@ public class bossmovement : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         canTakeDamage = true;
+    }
+
+    IEnumerator OnHit()
+    {
+        bossSprite.color = new Color(1f, 1f, 1f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        bossSprite.color = new Color(1f, 1f, 1f, 1f);
     }
 }

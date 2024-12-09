@@ -11,11 +11,14 @@ public class BasicEnemyHealth : MonoBehaviour
     public float speed = 5;
     private bool FacingRight = false;
 
+    public SpriteRenderer enemySprite;
+
 
     void Start()
     {
         currentHealth = maxHealth;
         transform.Translate(Vector2.right * speed * Time.deltaTime);
+        enemySprite = GameObject.Find("EnemyBasic").GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -41,6 +44,7 @@ public class BasicEnemyHealth : MonoBehaviour
         if (collision.gameObject.name == "Nail")
         {
             currentHealth--;
+            StartCoroutine("OnHit");
             
         }
 
@@ -69,4 +73,11 @@ public class BasicEnemyHealth : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+   IEnumerator OnHit()
+   {
+        enemySprite.color = new Color(1f, 1f, 1f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        enemySprite.color = new Color(1f, 1f, 1f, 1f);
+   }
 }

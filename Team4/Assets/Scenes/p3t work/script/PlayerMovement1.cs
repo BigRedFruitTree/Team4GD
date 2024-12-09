@@ -28,11 +28,13 @@ public class PlayerMovement1 : MonoBehaviour {
     public int healthBonus = 5;
 
     private bool endScreenShown = false;
+    private SpriteRenderer playerSprite;
 
     private void Start()
     {
         Player = GameObject.Find("blue_0");
         PlayerRB = GameObject.Find("blue_0").GetComponent<Rigidbody2D>();
+        playerSprite = GameObject.Find("blue_0").GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -83,12 +85,14 @@ public class PlayerMovement1 : MonoBehaviour {
         if (collision.gameObject.tag == "EnemyBasic" && canTakeDamage == true)
         {
             canTakeDamage = false;
+            StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
             health--;
         }
         if (collision.gameObject.tag == "EnemyFlying" && canTakeDamage == true)
         {
             canTakeDamage = false;
+            StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
             health--;
         }
@@ -96,6 +100,7 @@ public class PlayerMovement1 : MonoBehaviour {
         if (collision.gameObject.name == "BossAttack1" && canTakeDamage == true)
         {
             canTakeDamage = false;
+            StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
             health--;
         }
@@ -115,6 +120,7 @@ public class PlayerMovement1 : MonoBehaviour {
         if (collision.gameObject.name == "stinger prefab(Clone)" && canTakeDamage == true)
         {
             canTakeDamage = false;
+            StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
             health--;
         }
@@ -122,6 +128,7 @@ public class PlayerMovement1 : MonoBehaviour {
         if (collision.gameObject.name == "b" && canTakeDamage == true)
         {
             canTakeDamage = false;
+            StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
             health--;
         }
@@ -132,6 +139,7 @@ public class PlayerMovement1 : MonoBehaviour {
         if (collision.gameObject.tag == "Boss1" && canTakeDamage == true)
         {
             canTakeDamage = false;
+            StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
             health--;
         }
@@ -141,5 +149,12 @@ public class PlayerMovement1 : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         canTakeDamage = true;
+    }
+
+    IEnumerator OnHit()
+    {
+        playerSprite.color = new Color(1f, 1f, 1f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        playerSprite.color = new Color(1f, 1f, 1f, 1f);
     }
 }
