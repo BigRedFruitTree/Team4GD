@@ -11,7 +11,7 @@ public class PlayerMovement1 : MonoBehaviour {
     public GameObject Nail;
     private GameObject Player;
     private Rigidbody2D PlayerRB;
-    public GameObject endScreen;
+   
 
     public int health = 10;
     public int maxHealth = 10;
@@ -27,7 +27,7 @@ public class PlayerMovement1 : MonoBehaviour {
 
     public int healthBonus = 5;
 
-    private bool endScreenShown = false;
+   
     private SpriteRenderer playerSprite;
 
     private void Start()
@@ -107,14 +107,26 @@ public class PlayerMovement1 : MonoBehaviour {
 
         if (collision.gameObject.name == "health object")
         {
-            if (endScreenShown == true)
-            {
-                 Destroy(collision.gameObject);
-                 health = health + healthBonus;
-                if (health > maxHealth)
-                   health = maxHealth;
-            }
+            
+            
+            Destroy(collision.gameObject);
+            health = health + healthBonus;
+            if (health > maxHealth)
+                health = maxHealth;
+            
            
+        }
+
+        if (collision.gameObject.name == "health object(Clone)")
+        {
+            
+            
+            Destroy(collision.gameObject);
+            health = health + healthBonus;
+            if (health > maxHealth)
+                health = maxHealth;
+            
+
         }
 
         if (collision.gameObject.name == "stinger prefab(Clone)" && canTakeDamage == true)

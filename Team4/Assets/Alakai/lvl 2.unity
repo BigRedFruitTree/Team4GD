@@ -2621,6 +2621,7 @@ MonoBehaviour:
   bossAtacking: 0
   attackNumber: 0
   StunTimerSet: 5
+  healthObject: {fileID: 1227663510966543185, guid: 1d2afbda20e2ea44a9b90db208c677b0, type: 3}
 --- !u!61 &1503889613
 BoxCollider2D:
   m_ObjectHideFlags: 0

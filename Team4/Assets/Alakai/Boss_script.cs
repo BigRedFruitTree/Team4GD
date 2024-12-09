@@ -53,6 +53,8 @@ public class NewBehaviourScript : MonoBehaviour
     private int StunNumber;
 
     private SpriteRenderer bossSprite;
+    public GameObject healthObject;
+    private Quaternion posRO;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +65,9 @@ public class NewBehaviourScript : MonoBehaviour
 
         health = maxHealth;
 
-        PlayerGame = GameObject.Find("blue_0");       
+        PlayerGame = GameObject.Find("blue_0");
+
+        pos = transform.position;
 
         localScale = transform.localScale;
 
@@ -173,6 +177,15 @@ public class NewBehaviourScript : MonoBehaviour
             health--;
             StartCoroutine("OnHit");
             healthbar.value = health;
+            if(health == 30)
+            {
+                Instantiate(healthObject, pos, posRO);
+            }
+            if (health == 15)
+            {
+                Instantiate(healthObject, pos, posRO);
+            }
+            
         }
     }
 
