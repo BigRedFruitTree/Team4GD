@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6d70935536040c1478058e45f69123b8
+guid: 58a9c524f5868854397824c0d677c428
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -609197253124883428
-    second: frame0010_0
+      213: 7048500322719922074
+    second: TreeSap_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: frame0010_0
+      name: TreeSap_0
       rect:
         serializedVersion: 2
-        x: 676
-        y: 45
-        width: 377
-        height: 229
+        x: 93
+        y: 178
+        width: 50
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c1cf8517352bb87f0800000000000000
-      internalID: -609197253124883428
+      spriteID: a9772fee2bd41d160800000000000000
+      internalID: 7048500322719922074
       vertices: []
       indices: 
       edges: []
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      frame0010_0: -609197253124883428
+      TreeSap_0: 7048500322719922074
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

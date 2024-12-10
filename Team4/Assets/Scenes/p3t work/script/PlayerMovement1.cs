@@ -140,6 +140,18 @@ public class PlayerMovement1 : MonoBehaviour {
 
         }
 
+        if (collision.gameObject.name == "health object2(Clone)")
+        {
+
+
+            Destroy(collision.gameObject);
+            health = health + healthBonus;
+            if (health > maxHealth)
+                health = maxHealth;
+
+
+        }
+
         if (collision.gameObject.name == "stinger prefab(Clone)" && canTakeDamage == true)
         {
             canTakeDamage = false;
