@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Red Meat HealthObject_0: -3859926201225547408
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
