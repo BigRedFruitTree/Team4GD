@@ -2614,7 +2614,7 @@ MonoBehaviour:
   health: 100
   healthbar: {fileID: 1995643147}
   canTakeDamage: 1
-  healthObject: {fileID: 1227663510966543185, guid: 1d2afbda20e2ea44a9b90db208c677b0, type: 3}
+  healthObject: {fileID: 6881950706674952249, guid: cb825c9309bba304f90e431ca35c89f1, type: 3}
   bossPos: {x: 0, y: 0, z: 0}
   amIDead: 0
 --- !u!50 &1399754422
@@ -3797,7 +3797,7 @@ Transform:
   m_GameObject: {fileID: 1856713779}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0380177, y: 2.51765, z: -10}
+  m_LocalPosition: {x: -1.4040546, y: 2.51907, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
