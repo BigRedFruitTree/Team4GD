@@ -51,10 +51,14 @@ public class PlayerMovement1 : MonoBehaviour {
             
         }
 
-        if(boss2Move.amIDead == true)
+        if(SceneManager.GetActiveScene().buildIndex > 3)
         {
-            Endgame.SetActive(true);
+           if (boss2Move.amIDead == true)
+           {
+             Endgame.SetActive(true);
+           } 
         }
+        
         controller = GetComponent<CharacterController2D>();
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
