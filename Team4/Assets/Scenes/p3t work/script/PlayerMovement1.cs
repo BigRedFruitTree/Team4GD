@@ -7,11 +7,12 @@ public class PlayerMovement1 : MonoBehaviour {
 
     public GameManager gm;
     public CharacterController2D controller;
+    public bossmovement boss2Move;
     public GameObject nailPos;
     public GameObject Nail;
     private GameObject Player;
     private Rigidbody2D PlayerRB;
-   
+    public GameObject Endgame;
 
     public int health = 10;
     public int maxHealth = 10;
@@ -35,6 +36,7 @@ public class PlayerMovement1 : MonoBehaviour {
         Player = GameObject.Find("blue_0");
         PlayerRB = GameObject.Find("blue_0").GetComponent<Rigidbody2D>();
         playerSprite = GameObject.Find("blue_0").GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
@@ -46,8 +48,13 @@ public class PlayerMovement1 : MonoBehaviour {
         if (health <= 0)
         {
             Time.timeScale = 0;
+            
         }
 
+        if(boss2Move.amIDead == true)
+        {
+            Endgame.SetActive(true);
+        }
         controller = GetComponent<CharacterController2D>();
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;

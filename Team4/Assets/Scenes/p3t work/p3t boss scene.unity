@@ -2614,6 +2614,9 @@ MonoBehaviour:
   health: 100
   healthbar: {fileID: 1995643147}
   canTakeDamage: 1
+  healthObject: {fileID: 1227663510966543185, guid: 1d2afbda20e2ea44a9b90db208c677b0, type: 3}
+  bossPos: {x: 0, y: 0, z: 0}
+  amIDead: 0
 --- !u!50 &1399754422
 Rigidbody2D:
   serializedVersion: 4
@@ -3945,9 +3948,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1205205617}
     - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: Endgame
+      value: 
+      objectReference: {fileID: 1941676964}
+    - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
       propertyPath: nailPos
       value: 
       objectReference: {fileID: 1680287542}
+    - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: boss2Move
+      value: 
+      objectReference: {fileID: 1399754421}
     - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
       propertyPath: controller
       value: 

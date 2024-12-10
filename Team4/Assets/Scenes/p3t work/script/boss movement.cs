@@ -31,12 +31,17 @@ public class bossmovement : MonoBehaviour {
     public bool canTakeDamage = true;
 
     private SpriteRenderer bossSprite;
+    public GameObject healthObject;
+    private Quaternion posRO;
+    public Vector3 bossPos;
+    public bool amIDead = false;
 
     // Use this for initialization
     void Start ()
     {
         health = maxHealth;
         pos = transform.position;
+        
 
 		localScale = transform.localScale;
         bossSprite = GameObject.Find("b").GetComponent<SpriteRenderer>();
@@ -45,6 +50,8 @@ public class bossmovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        bossPos = transform.position;
 		
 		CheckWhereToFace ();
 
@@ -65,6 +72,7 @@ public class bossmovement : MonoBehaviour {
         if (health <= 0)
         {
             Destroy(gameObject);
+            amIDead = true;
         }
 
     }
@@ -105,6 +113,10 @@ public class bossmovement : MonoBehaviour {
             health--;
             healthbar.value = health;
             StartCoroutine("HitCoolDown");
+            if (health == 5)
+            {
+                Instantiate(healthObject, bossPos, posRO);
+            }
         }
     }
 

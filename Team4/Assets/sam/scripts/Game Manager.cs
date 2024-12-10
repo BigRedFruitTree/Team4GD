@@ -84,6 +84,8 @@ public class GameManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+        Cursor.lockState = CursorLockMode.Confined;
+        
     }
 
 }
