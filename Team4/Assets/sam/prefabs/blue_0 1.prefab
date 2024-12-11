@@ -308,14 +308,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f9bdf7779ac694593d83745e650690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   controller: {fileID: 0}
+  boss2Move: {fileID: 0}
   nailPos: {fileID: 0}
   Nail: {fileID: 0}
+  Endgame: {fileID: 0}
   health: 10
   maxHealth: 10
   canTakeDamage: 1
   runSpeed: 40
+  knockbackForce: 1000
   jumps: 2
+  healthBonus: 5
 --- !u!114 &1518523670995414409
 MonoBehaviour:
   m_ObjectHideFlags: 0
