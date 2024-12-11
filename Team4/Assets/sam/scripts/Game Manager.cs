@@ -50,6 +50,12 @@ public class GameManager : MonoBehaviour
             {
                 gameoverScreen.SetActive(true);
             }
+
+            if (!isPaused)
+            {
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = (false);
+            }
         }
     }
     public void Resume()
