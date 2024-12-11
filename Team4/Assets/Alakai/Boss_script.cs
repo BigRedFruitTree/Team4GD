@@ -57,6 +57,10 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject healthObject;
     private Quaternion posRO;
 
+    [Header("Audio")]
+    public AudioSource bossAudioSource;
+    public AudioClip deathSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -156,6 +160,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (health <= 0)
         {
+            bossAudioSource.PlayOneShot(deathSound);
             Destroy(gameObject);
             gm.LoadLevel(3);
         }
