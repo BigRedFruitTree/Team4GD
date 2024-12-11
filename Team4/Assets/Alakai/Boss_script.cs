@@ -39,6 +39,7 @@ public class NewBehaviourScript : MonoBehaviour
     private int Active = 1;
     private float StunLength;
     public float StunLengthSet;
+    public bool canTakeDamage = true;
 
 
     [Header("Attack")]
@@ -165,26 +166,22 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            canTakeDamage = true;
             BossCollider.isTrigger = true;
             StartCoroutine("BossCollidesWithPlayer");
+            StartCoroutine("HitCoolDown");
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Nail")
+        if (collision.gameObject.name == "Nail" && canTakeDamage == true && BossCollider.isTrigger == false)
         {
+            canTakeDamage = false;
             health--;
             StartCoroutine("OnHit");
             healthbar.value = health;
-            if(health == 30)
-            {
-                Instantiate(healthObject, pos, posRO);
-            }
-            if (health == 15)
-            {
-                Instantiate(healthObject, pos, posRO);
-            }
+            StartCoroutine("HitCoolDown");
             
         }
     }
@@ -202,6 +199,12 @@ public class NewBehaviourScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         BossCollider.isTrigger = false;
+    }
+
+    IEnumerator HitCoolDown()
+    {
+        yield return new WaitForSeconds(1f);
+        canTakeDamage = true;
     }
 
     public void DetectPlayer()
@@ -241,7 +244,7 @@ public class NewBehaviourScript : MonoBehaviour
     IEnumerator OnHit()
     {
         bossSprite.color = new Color(1f, 1f, 1f, 0.5f);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         bossSprite.color = new Color(1f, 1f, 1f, 1f);
     }
 
