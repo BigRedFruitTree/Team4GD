@@ -5848,7 +5848,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5545995521738299575, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1748858103}
+    - targetCorrespondingSourceObject: {fileID: 5545995521738299575, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1748858102}
   m_SourcePrefab: {fileID: 100100000, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
 --- !u!1001 &1471667740
 PrefabInstance:
@@ -6379,6 +6385,7 @@ MonoBehaviour:
   facingRight: 1
   maxHealth: 2
   currentHealth: 2
+  enemySprite: {fileID: 0}
 --- !u!212 &1507694526
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7134,6 +7141,49 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.26749754, y: 0}
   m_Radius: 0.23250246
+--- !u!1 &1748858101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5545995521738299575, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+  m_PrefabInstance: {fileID: 1451440977}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1748858102
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748858101}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21f360cfd44b7e649aa56f59b83341be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &1748858103
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748858101}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: c4e3350e2b55aa341bad0aa7c89068b4, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &1776663392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 63784624685364899, guid: 3213f3feaca27b54da25a94b80ad15c9, type: 3}
