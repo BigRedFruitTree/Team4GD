@@ -116,31 +116,7 @@ public class PlayerMovement1 : MonoBehaviour {
             health--;
         }
 
-        if (collision.gameObject.name == "health object")
-        {
-            
-            
-            Destroy(collision.gameObject);
-            health = health + healthBonus;
-            if (health > maxHealth)
-                health = maxHealth;
-            
-           
-        }
-
-        if (collision.gameObject.name == "health object(Clone)")
-        {
-            
-            
-            Destroy(collision.gameObject);
-            health = health + healthBonus;
-            if (health > maxHealth)
-                health = maxHealth;
-            
-
-        }
-
-        if (collision.gameObject.name == "health object2(Clone)")
+        if (collision.gameObject.tag == "healthObject")
         {
 
 
