@@ -1422,6 +1422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3771e5661cbf314488ef380048e27c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 1501493554}
   attacking: 1
   canAttack: 1
 --- !u!114 &980503585
@@ -1436,7 +1437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f9bdf7779ac694593d83745e650690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 1501493554}
   controller: {fileID: 0}
   boss2Move: {fileID: 0}
   nailPos: {fileID: 0}
@@ -1513,7 +1514,7 @@ MonoBehaviour:
   m_CeilingCheck: {fileID: 817527980}
   m_Grounded: 0
   m_FacingRight: 1
-  gm: {fileID: 0}
+  gm: {fileID: 1501493554}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []

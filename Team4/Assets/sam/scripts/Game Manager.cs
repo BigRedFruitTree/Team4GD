@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject pausemenu;
     public GameObject gameoverScreen;
     public bool finished = false;
+    public bool reset = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +22,12 @@ public class GameManager : MonoBehaviour
         gameoverScreen.SetActive(false);
         if(SceneManager.GetActiveScene().buildIndex > 0)
         {
+            
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
         }
+
+
     }
 
     //this note
@@ -50,13 +54,22 @@ public class GameManager : MonoBehaviour
                     Resume();
                 }
 
+                if (reset && isPaused)
+                {
+                    RestartLevel();
+                }
+
             }
             if(playerData.health <= 0)
             {
+                //Time.timeScale = 0;
                 gameoverScreen.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = (true);
+                isPaused = true;
+                reset = true;
             }
+
         }
     }
     public void Resume()
@@ -84,8 +97,14 @@ public class GameManager : MonoBehaviour
      public void RestartLevel()
      {
         LoadLevel(SceneManager.GetActiveScene().buildIndex);
-       
-     }
+
+        Time.timeScale = 1;
+
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
+
+
+    }
     
     public void MainMenu()
     {
@@ -94,15 +113,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-    IEnumerator RestartCursor()
-    {
-        yield return new WaitForSeconds(0.5f);
-        Time.timeScale = 1;
-
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
-
-        isPaused = false;
-    }
+   
 
 }

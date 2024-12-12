@@ -60,7 +60,7 @@ public class CharacterController2D : MonoBehaviour
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
-			if (colliders[i].gameObject != gameObject)
+			if (colliders[i].gameObject != gameObject && gm.reset == false)
 			{
 				m_Grounded = true;
 				if (!wasGrounded)
@@ -100,7 +100,7 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 		// If the player should jump...
-		if (jump && playerMovementScript.jumps > 0)
+		if (jump && playerMovementScript.jumps > 0 && gm.reset == false)
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
