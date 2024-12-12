@@ -126,11 +126,15 @@ public class CharacterController2D : MonoBehaviour
 		if (collision.gameObject.name == "DOOR")
 		{
 			gm.LoadLevel(2);
-		}
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = false;
+        }
 		if (collision.gameObject.tag == "HIVE")
 		{
 			gm.LoadLevel(4);
-		}
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = false;
+        }
 	}
 
 }

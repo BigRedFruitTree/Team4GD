@@ -179,7 +179,7 @@ public class PlayerMovement1 : MonoBehaviour {
     IEnumerator OnHit()
     {
         playerSprite.color = new Color(1f, 1f, 1f, 0.5f);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         playerSprite.color = new Color(1f, 1f, 1f, 1f);
     }
 }

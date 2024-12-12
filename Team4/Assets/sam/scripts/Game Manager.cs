@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
     {
         pausemenu.SetActive(false);
         gameoverScreen.SetActive(false);
+        if(SceneManager.GetActiveScene().buildIndex > 0)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = false;
+        }
     }
 
     //this note
@@ -49,12 +54,8 @@ public class GameManager : MonoBehaviour
             if(playerData.health <= 0)
             {
                 gameoverScreen.SetActive(true);
-            }
-
-            if (!isPaused)
-            {
-                Cursor.lockState = CursorLockMode.Confined;
-                Cursor.visible = (false);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = (true);
             }
         }
     }
@@ -83,8 +84,7 @@ public class GameManager : MonoBehaviour
      public void RestartLevel()
      {
         LoadLevel(SceneManager.GetActiveScene().buildIndex);
-
-        
+       
      }
     
     public void MainMenu()
@@ -92,6 +92,17 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
         Cursor.lockState = CursorLockMode.None;
         
+    }
+
+    IEnumerator RestartCursor()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale = 1;
+
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
+
+        isPaused = false;
     }
 
 }
