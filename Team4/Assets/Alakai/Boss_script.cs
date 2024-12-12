@@ -60,6 +60,7 @@ public class NewBehaviourScript : MonoBehaviour
     [Header("Audio")]
     public AudioSource bossAudioSource;
     public AudioClip deathSound;
+    private bool isPlayingAudio = false;
 
     // Start is called before the first frame update
     void Start()
@@ -158,11 +159,15 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
 
+        if (health <= 0 && isPlayingAudio == false )
+        {
+           bossAudioSource.PlayOneShot(deathSound);
+           isPlayingAudio = true;
+        }
+
         if (health <= 0)
         {
-            bossAudioSource.PlayOneShot(deathSound);
-            Destroy(gameObject);
-            gm.LoadLevel(3);
+           StartCoroutine("DeathOfBoss");
         }
         pos = transform.position;
     }
@@ -187,7 +192,6 @@ public class NewBehaviourScript : MonoBehaviour
             StartCoroutine("OnHit");
             healthbar.value = health;
             StartCoroutine("HitCoolDown");
-            
         }
     }
 
@@ -204,6 +208,14 @@ public class NewBehaviourScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         BossCollider.isTrigger = false;
+    }
+
+
+    IEnumerator DeathOfBoss()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+        gm.LoadLevel(3);
     }
 
     IEnumerator HitCoolDown()
