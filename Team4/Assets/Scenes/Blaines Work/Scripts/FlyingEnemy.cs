@@ -17,6 +17,11 @@ public class FlyingEnemy : MonoBehaviour
     public SpriteRenderer enemySprite;
 
     Vector3 pos, localScale;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip deathSound;
+    private bool isPlayingAudio = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,19 +43,25 @@ public class FlyingEnemy : MonoBehaviour
         transform.localScale = localScale;
 
 
-        if (facingRight)
+        if (facingRight && currentHealth > 0)
         {
            MoveRight();
         }
 
-        if (!facingRight)
+        if (!facingRight && currentHealth > 0)
         {
             MoveLeft();
         }
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            StartCoroutine("Death");
+        }
+
+        if (currentHealth <= 0 && isPlayingAudio == false)
+        {
+           audioSource.PlayOneShot(deathSound);
+           isPlayingAudio = true;
         }
 
     }
@@ -91,5 +102,11 @@ public class FlyingEnemy : MonoBehaviour
         enemySprite.color = new Color(1f, 1f, 1f, 0.5f);
         yield return new WaitForSeconds(0.5f);
         enemySprite.color = new Color(1f, 1f, 1f, 1f);
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 }
