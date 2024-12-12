@@ -36,6 +36,10 @@ public class bossmovement : MonoBehaviour {
     public Vector3 bossPos;
     public bool amIDead = false;
 
+    [Header("Audio")]
+    public AudioSource bossAudioSource;
+    public AudioClip deathSound;
+    private bool isPlayingAudio = false;
     // Use this for initialization
     void Start ()
     {
@@ -69,10 +73,15 @@ public class bossmovement : MonoBehaviour {
             timeuntilattack = 0;
         }
 
+        if (health <= 0 && isPlayingAudio == false )
+        {
+           bossAudioSource.PlayOneShot(deathSound);
+           isPlayingAudio = true;
+        }
+
         if (health <= 0)
         {
-            Destroy(gameObject);
-            amIDead = true;
+            StartCoroutine("DeathOfBoss");
         }
 
     }
@@ -131,5 +140,12 @@ public class bossmovement : MonoBehaviour {
         bossSprite.color = new Color(1f, 1f, 1f, 0.5f);
         yield return new WaitForSeconds(0.5f);
         bossSprite.color = new Color(1f, 1f, 1f, 1f);
+    }
+
+     IEnumerator DeathOfBoss()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+        amIDead = true;
     }
 }
