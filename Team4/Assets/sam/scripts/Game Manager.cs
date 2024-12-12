@@ -45,7 +45,6 @@ public class GameManager : MonoBehaviour
                     pausemenu.SetActive(true);
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = (true);
-                    Time.timeScale = 0;
                     isPaused = true;
 
                 }
@@ -62,7 +61,7 @@ public class GameManager : MonoBehaviour
             }
             if(playerData.health <= 0)
             {
-                //Time.timeScale = 0;
+                
                 gameoverScreen.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = (true);

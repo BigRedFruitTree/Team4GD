@@ -70,7 +70,7 @@ public class PlayerMovement1 : MonoBehaviour {
 
         Nail = GameObject.Find("Nail");
 
-        if (Input.GetButtonDown("Jump") && jumps > 1 && gm.reset == false)
+        if (Input.GetButtonDown("Jump") && jumps > 1 && gm.reset == false && gm.isPaused == false)
 		{
             jumps--;
 			jump = true;
@@ -93,12 +93,20 @@ public class PlayerMovement1 : MonoBehaviour {
         controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
         jump = false;
 
-        
+        if (gm.isPaused == false || gm.reset == false)
+        {
+            PlayerRB.constraints = RigidbodyConstraints2D.None;
+            PlayerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+        if (gm.isPaused == true || gm.reset == true)
+        {
+            PlayerRB.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "EnemyBasic" && canTakeDamage == true && gm.reset == false)
+        if (collision.gameObject.tag == "EnemyBasic" && canTakeDamage == true && gm.reset == false && gm.isPaused == false)
         {
             audioSource.PlayOneShot(hurt);
             canTakeDamage = false;
@@ -106,16 +114,7 @@ public class PlayerMovement1 : MonoBehaviour {
             StartCoroutine("HitCoolDown");
             health--;
         }
-        if (collision.gameObject.tag == "EnemyFlying" && canTakeDamage == true && gm.reset == false)
-        {
-            audioSource.PlayOneShot(hurt);
-            canTakeDamage = false;
-            StartCoroutine("OnHit");
-            StartCoroutine("HitCoolDown");
-            health--;
-        }
-
-        if (collision.gameObject.name == "BossAttack1" && canTakeDamage == true && gm.reset == false)
+        if (collision.gameObject.tag == "EnemyFlying" && canTakeDamage == true && gm.reset == false && gm.isPaused == false)
         {
             audioSource.PlayOneShot(hurt);
             canTakeDamage = false;
@@ -124,7 +123,16 @@ public class PlayerMovement1 : MonoBehaviour {
             health--;
         }
 
-        if (collision.gameObject.tag == "healthObject" && gm.reset == false)
+        if (collision.gameObject.name == "BossAttack1" && canTakeDamage == true && gm.reset == false && gm.isPaused == false)
+        {
+            audioSource.PlayOneShot(hurt);
+            canTakeDamage = false;
+            StartCoroutine("OnHit");
+            StartCoroutine("HitCoolDown");
+            health--;
+        }
+
+        if (collision.gameObject.tag == "healthObject" && gm.reset == false && gm.isPaused == false)
         {
 
 
@@ -137,7 +145,7 @@ public class PlayerMovement1 : MonoBehaviour {
 
         }
 
-        if (collision.gameObject.name == "stinger prefab(Clone)" && canTakeDamage == true && gm.reset == false)
+        if (collision.gameObject.name == "stinger prefab(Clone)" && canTakeDamage == true && gm.reset == false && gm.isPaused == false)
         {
             audioSource.PlayOneShot(hurt);
             canTakeDamage = false;
@@ -146,7 +154,7 @@ public class PlayerMovement1 : MonoBehaviour {
             health--;
         }
 
-        if (collision.gameObject.name == "b" && canTakeDamage == true && gm.reset == false)
+        if (collision.gameObject.name == "b" && canTakeDamage == true && gm.reset == false && gm.isPaused == false)
         {
             audioSource.PlayOneShot(hurt);
             canTakeDamage = false;
@@ -158,7 +166,7 @@ public class PlayerMovement1 : MonoBehaviour {
    
     private void OnCollisionEnter2D(Collision2D collision) 
     {
-        if (collision.gameObject.tag == "Boss1" && canTakeDamage == true && gm.reset == false)
+        if (collision.gameObject.tag == "Boss1" && canTakeDamage == true && gm.reset == false && gm.isPaused == false)
         {
             audioSource.PlayOneShot(hurt);
             canTakeDamage = false;

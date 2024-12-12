@@ -1747,6 +1747,10 @@ PrefabInstance:
       propertyPath: playerMovementScript
       value: 
       objectReference: {fileID: 2056283527}
+    - target: {fileID: 2508151971260540098, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: m_WhatIsGround.m_Bits
+      value: 151
+      objectReference: {fileID: 0}
     - target: {fileID: 3018622933935618904, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
       propertyPath: m_Name
       value: blue_0

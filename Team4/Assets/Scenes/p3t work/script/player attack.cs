@@ -24,13 +24,13 @@ public class playerattack : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetKeyDown(KeyCode.F) && canAttack == true && gm.reset == false)
+        if(Input.GetKeyDown(KeyCode.F) && canAttack == true && gm.reset == false && gm.isPaused == false)
         {
             Attack();
             canAttack = false;
         }
 
-        if (canAttack = true && attacking && gm.reset == false)
+        if (canAttack = true && attacking && gm.reset == false && gm.isPaused == false)
         {
             timer += Time.deltaTime;
         

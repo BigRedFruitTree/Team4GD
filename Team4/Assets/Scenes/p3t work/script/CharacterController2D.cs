@@ -60,7 +60,7 @@ public class CharacterController2D : MonoBehaviour
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
-			if (colliders[i].gameObject != gameObject && gm.reset == false)
+			if (colliders[i].gameObject != gameObject && gm.reset == false && gm.isPaused == false)
 			{
 				m_Grounded = true;
 				if (!wasGrounded)
@@ -76,7 +76,7 @@ public class CharacterController2D : MonoBehaviour
 		
 
 		//only control the player if grounded or airControl is turned on
-		if (m_Grounded || m_AirControl)
+		if (m_Grounded && gm.isPaused == false && gm.reset == false || m_AirControl && gm.isPaused == false && gm.reset == false)
 		{
 
 			
@@ -100,7 +100,7 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 		// If the player should jump...
-		if (jump && playerMovementScript.jumps > 0 && gm.reset == false)
+		if (jump && playerMovementScript.jumps > 0 && gm.reset == false && gm.isPaused == false)
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
@@ -123,13 +123,13 @@ public class CharacterController2D : MonoBehaviour
 	public void OnTriggerEnter2D(Collider2D collision)
 	{
 
-		if (collision.gameObject.name == "DOOR")
+		if (collision.gameObject.name == "DOOR" && gm.isPaused == false && gm.reset == false)
 		{
 			gm.LoadLevel(2);
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
         }
-		if (collision.gameObject.tag == "HIVE")
+		if (collision.gameObject.tag == "HIVE" && gm.isPaused == false && gm.reset == false)
 		{
 			gm.LoadLevel(4);
             Cursor.lockState = CursorLockMode.Confined;
