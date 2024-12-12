@@ -28,14 +28,21 @@ public class PlayerMovement1 : MonoBehaviour {
 
     public int healthBonus = 5;
 
-   
     private SpriteRenderer playerSprite;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip hurt;
+    public AudioClip doubleJump;
+    public AudioClip jumpAudio;
+    public AudioClip healhGain;
 
     private void Start()
     {
         Player = GameObject.Find("blue_0");
         PlayerRB = GameObject.Find("blue_0").GetComponent<Rigidbody2D>();
         playerSprite = GameObject.Find("blue_0").GetComponent<SpriteRenderer>();
+        audioSource = GameObject.Find("blue_0").GetComponent<AudioSource>();
         
     }
 
@@ -67,10 +74,11 @@ public class PlayerMovement1 : MonoBehaviour {
 
         Nail = GameObject.Find("Nail");
 
-		if (Input.GetButtonDown("Jump") && jumps > 0)
+		if (Input.GetButtonDown("Jump") && jumps > 1)
 		{
             jumps--;
 			jump = true;
+            audioSource.PlayOneShot(jumpAudio);
 		}	
 
         if(controller.m_Grounded)
