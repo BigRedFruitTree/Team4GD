@@ -13,26 +13,36 @@ public class BasicEnemyHealth : MonoBehaviour
 
     public SpriteRenderer enemySprite;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip deathSound;
+    private bool isPlayingAudio = false;
+
 
     void Start()
     {
         currentHealth = maxHealth;
         transform.Translate(Vector2.right * speed * Time.deltaTime);
-        enemySprite = GameObject.Find("EnemyBasic").GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            StartCoroutine("Death");
         }
 
-        if (FacingRight)
+        if (currentHealth <= 0 && isPlayingAudio == false)
+        {
+           audioSource.PlayOneShot(deathSound);
+           isPlayingAudio = true;
+        }
+
+        if (FacingRight && currentHealth > 0)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
-        if (!FacingRight)
+        if (!FacingRight && currentHealth > 0)
         {
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
@@ -74,10 +84,17 @@ public class BasicEnemyHealth : MonoBehaviour
         transform.localScale = theScale;
     }
 
-   IEnumerator OnHit()
-   {
+    IEnumerator OnHit()
+    {
         enemySprite.color = new Color(1f, 1f, 1f, 0.5f);
         yield return new WaitForSeconds(0.5f);
         enemySprite.color = new Color(1f, 1f, 1f, 1f);
-   }
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+        
+    }
 }

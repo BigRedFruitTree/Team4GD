@@ -505,6 +505,10 @@ PrefabInstance:
       propertyPath: speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1956185656612799617, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+      propertyPath: enemySprite
+      value: 
+      objectReference: {fileID: 1691477042}
     - target: {fileID: 5545995521738299575, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
       propertyPath: m_Name
       value: EnemyBasic (5)
@@ -1241,7 +1245,7 @@ Transform:
   m_GameObject: {fileID: 257037711}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.419392, y: 41.442368, z: -10}
+  m_LocalPosition: {x: 22.80393, y: 41.38676, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2092,6 +2096,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1956185656612799617, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+      propertyPath: enemySprite
+      value: 
+      objectReference: {fileID: 1698809206}
     - target: {fileID: 5545995521738299575, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
       propertyPath: m_Name
       value: EnemyBasic
@@ -3637,6 +3645,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &879383419 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1080351518752769907, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+  m_PrefabInstance: {fileID: 1006133872}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &888522024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3911,6 +3924,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1956185656612799617, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+      propertyPath: enemySprite
+      value: 
+      objectReference: {fileID: 2085242677}
     - target: {fileID: 5545995521738299575, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
       propertyPath: m_Name
       value: EnemyBasic (7)
@@ -4352,6 +4369,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1956185656612799617, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+      propertyPath: enemySprite
+      value: 
+      objectReference: {fileID: 879383419}
     - target: {fileID: 5545995521738299575, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
       propertyPath: m_Name
       value: EnemyBasic (1)
@@ -6330,6 +6351,10 @@ PrefabInstance:
       propertyPath: speed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1956185656612799617, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+      propertyPath: enemySprite
+      value: 
+      objectReference: {fileID: 2147299119}
     - target: {fileID: 5545995521738299575, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
       propertyPath: m_Name
       value: EnemyBasic (4)
@@ -6410,6 +6435,10 @@ PrefabInstance:
       propertyPath: speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1956185656612799617, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+      propertyPath: enemySprite
+      value: 
+      objectReference: {fileID: 1748858107}
     - target: {fileID: 5545995521738299575, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
       propertyPath: m_Name
       value: EnemyBasic (2)
@@ -7168,6 +7197,10 @@ PrefabInstance:
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1956185656612799617, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+      propertyPath: enemySprite
+      value: 
+      objectReference: {fileID: 2027930033}
     - target: {fileID: 5545995521738299575, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
       propertyPath: m_Name
       value: EnemyBasic (3)
@@ -7664,6 +7697,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &1691477042 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1080351518752769907, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+  m_PrefabInstance: {fileID: 98801835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1698809196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8706127433060017255, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
@@ -7707,6 +7745,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &1698809206 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1080351518752769907, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+  m_PrefabInstance: {fileID: 507938659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1703673661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7976,6 +8019,11 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!212 &1748858107 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1080351518752769907, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+  m_PrefabInstance: {fileID: 1451440977}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1776663392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 63784624685364899, guid: 3213f3feaca27b54da25a94b80ad15c9, type: 3}
@@ -8152,6 +8200,10 @@ PrefabInstance:
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1956185656612799617, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+      propertyPath: enemySprite
+      value: 
+      objectReference: {fileID: 1932714648}
     - target: {fileID: 5545995521738299575, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
       propertyPath: m_Name
       value: EnemyBasic (6)
@@ -8391,6 +8443,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &1932714648 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1080351518752769907, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+  m_PrefabInstance: {fileID: 1859996656}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1933239433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2078788035435784650, guid: bf666a5056ed5b64a989b34d50ac7b63, type: 3}
@@ -8795,6 +8852,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &2027930033 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1080351518752769907, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+  m_PrefabInstance: {fileID: 1537182058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2050609565
 GameObject:
   m_ObjectHideFlags: 0
@@ -8933,6 +8995,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &2085242677 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1080351518752769907, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+  m_PrefabInstance: {fileID: 948312681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2090214662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2078788035435784650, guid: bf666a5056ed5b64a989b34d50ac7b63, type: 3}
@@ -9351,6 +9418,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &2147299119 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1080351518752769907, guid: 305709d188bd3294c81ce927471fcea9, type: 3}
+  m_PrefabInstance: {fileID: 1426876438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4123971512067602089
 PrefabInstance:
   m_ObjectHideFlags: 0
