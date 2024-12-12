@@ -33,9 +33,8 @@ public class PlayerMovement1 : MonoBehaviour {
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip hurt;
-    public AudioClip doubleJump;
     public AudioClip jumpAudio;
-    public AudioClip healhGain;
+    public AudioClip healthGain;
 
     private void Start()
     {
@@ -103,6 +102,7 @@ public class PlayerMovement1 : MonoBehaviour {
     {
         if (collision.gameObject.tag == "EnemyBasic" && canTakeDamage == true)
         {
+            audioSource.PlayOneShot(hurt);
             canTakeDamage = false;
             StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
@@ -110,6 +110,7 @@ public class PlayerMovement1 : MonoBehaviour {
         }
         if (collision.gameObject.tag == "EnemyFlying" && canTakeDamage == true)
         {
+            audioSource.PlayOneShot(hurt);
             canTakeDamage = false;
             StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
@@ -118,6 +119,7 @@ public class PlayerMovement1 : MonoBehaviour {
 
         if (collision.gameObject.name == "BossAttack1" && canTakeDamage == true)
         {
+            audioSource.PlayOneShot(hurt);
             canTakeDamage = false;
             StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
@@ -130,6 +132,7 @@ public class PlayerMovement1 : MonoBehaviour {
 
             Destroy(collision.gameObject);
             health = health + healthBonus;
+            audioSource.PlayOneShot(healthGain);
             if (health > maxHealth)
                 health = maxHealth;
 
@@ -138,6 +141,7 @@ public class PlayerMovement1 : MonoBehaviour {
 
         if (collision.gameObject.name == "stinger prefab(Clone)" && canTakeDamage == true)
         {
+            audioSource.PlayOneShot(hurt);
             canTakeDamage = false;
             StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
@@ -146,6 +150,7 @@ public class PlayerMovement1 : MonoBehaviour {
 
         if (collision.gameObject.name == "b" && canTakeDamage == true)
         {
+            audioSource.PlayOneShot(hurt);
             canTakeDamage = false;
             StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
@@ -157,6 +162,7 @@ public class PlayerMovement1 : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Boss1" && canTakeDamage == true)
         {
+            audioSource.PlayOneShot(hurt);
             canTakeDamage = false;
             StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");

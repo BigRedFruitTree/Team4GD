@@ -12,12 +12,16 @@ public class turnoffonwep : MonoBehaviour
     public CharacterController2D character;
 
     public bool canAttack = true;
+
+    public AudioSource audioSource;
+    public AudioClip attack;
     // Start is called before the first frame update
     void Start()
     {
         spriteSquare = gameObject.GetComponent<SpriteRenderer>();
         attackAreaCollider = gameObject.GetComponent<BoxCollider2D>();
         character = GameObject.Find("blue_0").GetComponent<CharacterController2D>();
+        audioSource = GameObject.Find("blue_0").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +29,7 @@ public class turnoffonwep : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && canAttack == true)
         {
+           audioSource.PlayOneShot(attack);
            Flip();
            canAttack = false;
            spriteSquare.enabled = true;

@@ -17,6 +17,7 @@ public class playerattack : MonoBehaviour
     void Start()
     {
         attackArea = transform.GetChild(0).gameObject;
+
     }
 
     // Update is called once per frame
@@ -25,9 +26,8 @@ public class playerattack : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.F) && canAttack == true)
         {
-            canAttack = false;
             Attack();
-            
+            canAttack = false;
         }
 
         if (canAttack = true && attacking)
@@ -45,6 +45,7 @@ public class playerattack : MonoBehaviour
     }
     private void Attack()
     {
+        
         attacking = true;
         attackArea.SetActive(attacking);
     }
