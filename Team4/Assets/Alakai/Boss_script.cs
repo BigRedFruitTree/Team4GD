@@ -50,7 +50,7 @@ public class NewBehaviourScript : MonoBehaviour
     public int attackNumber = 0;
 
     private float StunTimer;
-    public float StunTimerSet;
+    public float StunTimerSet = 5;
     private int StunNumber;
 
     private SpriteRenderer bossSprite;
@@ -132,7 +132,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         }
 
-        if (attackTimer <= 0 && bossAtacking == false)
+        if (attackTimer <= 0 && bossAtacking == false && gm.isPaused == false)
         {
             if (attackNumber == 1)
             {
@@ -145,7 +145,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (Active == 1)
         {
-            if (insightrange == true)
+            if (insightrange == true && gm.isPaused == false)
             {
                 CheckFacing();
                 if (right == true)
@@ -159,7 +159,7 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
 
-        if (health <= 0 && isPlayingAudio == false )
+        if (health <= 0 && isPlayingAudio == false && gm.isPaused == false)
         {
            bossAudioSource.PlayOneShot(deathSound);
            isPlayingAudio = true;
@@ -174,7 +174,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && gm.isPaused == false)
         {
             canTakeDamage = true;
             BossCollider.isTrigger = true;
@@ -185,7 +185,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Nail" && canTakeDamage == true && BossCollider.isTrigger == false)
+        if (collision.gameObject.name == "Nail" && canTakeDamage == true && BossCollider.isTrigger == false && gm.isPaused == false)
         {
             canTakeDamage = false;
             health--;
@@ -198,9 +198,9 @@ public class NewBehaviourScript : MonoBehaviour
     IEnumerator AttackLength()
     {
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         bossAtacking = false;
-        attackTimer = 3;
+        attackTimer = 5;
         attack1HB.SetActive(false);
     }
 

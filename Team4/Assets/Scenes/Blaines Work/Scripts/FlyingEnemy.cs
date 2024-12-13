@@ -8,6 +8,8 @@ public class FlyingEnemy : MonoBehaviour
     [SerializeField] public float frequency = 20f;
     [SerializeField] public float magnitude = 0.5f;
 
+    public GameManager gm;
+
     public bool facingRight = true;
     
     public float maxHealth = 2f;
@@ -70,26 +72,34 @@ public class FlyingEnemy : MonoBehaviour
 
     void MoveRight()
     {
-        pos += transform.right * Time.deltaTime * moveSpeed;
-        transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+        if(gm.isPaused == false)
+        {
+          pos += transform.right * Time.deltaTime * moveSpeed;
+          transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+        }
+       
     }
 
     void MoveLeft()
     {
-        pos -= transform.right * Time.deltaTime * moveSpeed;
-        transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+        if(gm.isPaused == false)
+        {
+          pos -= transform.right * Time.deltaTime * moveSpeed;
+          transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+        }
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Nail")
+        if (collision.gameObject.name == "Nail" && gm.isPaused == false)
         {
             currentHealth--;
             StartCoroutine("OnHit");
 
         }
 
-        if (collision.gameObject.tag == "EnemyTurningPoint")
+        if (collision.gameObject.tag == "EnemyTurningPoint" && gm.isPaused == false)
         {
             facingRight = !facingRight;
 
