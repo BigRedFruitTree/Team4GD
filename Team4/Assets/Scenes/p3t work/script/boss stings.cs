@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bossstings : MonoBehaviour
 {
+    public GameManager gm;
     public GameObject stinger;
     public Transform stingpos;
     private float bullettime;

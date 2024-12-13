@@ -2720,6 +2720,7 @@ MonoBehaviour:
   healthObject: {fileID: 6881950706674952249, guid: cb825c9309bba304f90e431ca35c89f1, type: 3}
   bossPos: {x: 0, y: 0, z: 0}
   amIDead: 0
+  gm: {fileID: 1931004597}
   bossAudioSource: {fileID: 1399754426}
   deathSound: {fileID: 8300000, guid: 63d0f34a633bc1548a035c27bbf10440, type: 3}
 --- !u!50 &1399754422
@@ -2762,6 +2763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacktype: 0
+  gm: {fileID: 0}
   attack: 1
   stinger: {fileID: 3942128742316807294, guid: 7b50477713b899e4ba9a5d0bb0530209, type: 3}
   stingpos: {fileID: 1378273163}
@@ -2784,6 +2786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86758b797fb642941bcb83cae69471d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   stinger: {fileID: 3942128742316807294, guid: 7b50477713b899e4ba9a5d0bb0530209, type: 3}
   stingpos: {fileID: 1378273163}
   tillnext: 1.5
