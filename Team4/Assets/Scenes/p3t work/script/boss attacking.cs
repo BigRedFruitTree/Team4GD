@@ -6,6 +6,7 @@ public class bossattacking : MonoBehaviour
 {
     enum AttackType { multishot, BIGSHOT }
     [SerializeField] private AttackType attacktype;
+    public GameManager gm;
     // starting: 1 = BIGSHOT 2 = multishot
     public int attack = 1;
     public GameObject stinger;

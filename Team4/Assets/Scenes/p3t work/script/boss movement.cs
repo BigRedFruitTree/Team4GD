@@ -36,6 +36,8 @@ public class bossmovement : MonoBehaviour {
     public Vector3 bossPos;
     public bool amIDead = false;
 
+    public GameManager gm;
+
     [Header("Audio")]
     public AudioSource bossAudioSource;
     public AudioClip deathSound;
@@ -73,7 +75,7 @@ public class bossmovement : MonoBehaviour {
             timeuntilattack = 0;
         }
 
-        if (health <= 0 && isPlayingAudio == false )
+        if (health <= 0 && isPlayingAudio == false && gm.isPaused == false)
         {
            bossAudioSource.PlayOneShot(deathSound);
            isPlayingAudio = true;
@@ -88,10 +90,10 @@ public class bossmovement : MonoBehaviour {
 
 	void CheckWhereToFace()
 	{
-		if (pos.x < -farmove)
+		if (pos.x < -farmove && gm.isPaused == false)
 			facingRight = true;
 		
-		else if (pos.x > farmove)
+		else if (pos.x > farmove && gm.isPaused == false)
 			facingRight = false;
 
 		if (((facingRight) && (localScale.x < 0)) || ((!facingRight) && (localScale.x > 0)))
@@ -103,19 +105,27 @@ public class bossmovement : MonoBehaviour {
 
 	void MoveRight()
 	{
-		pos += transform.right * Time.deltaTime * moveSpeed;
-		transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+        if(gm.isPaused == false)
+        {
+          pos += transform.right * Time.deltaTime * moveSpeed;
+		  transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+        }
+		
 	}
 
 	void MoveLeft()
 	{
-		pos -= transform.right * Time.deltaTime * moveSpeed;
-		transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+        if(gm.isPaused == false)
+        {
+          pos -= transform.right * Time.deltaTime * moveSpeed;
+		  transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+        }
+		
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Nail" && canTakeDamage == true)
+        if (collision.gameObject.name == "Nail" && canTakeDamage == true && gm.isPaused == false)
         {
             canTakeDamage = false;
             StartCoroutine("OnHit");
