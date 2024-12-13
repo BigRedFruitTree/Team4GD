@@ -13,6 +13,8 @@ public class BasicEnemyHealth : MonoBehaviour
 
     public SpriteRenderer enemySprite;
 
+    public GameManager gm;
+
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip deathSound;
@@ -38,11 +40,11 @@ public class BasicEnemyHealth : MonoBehaviour
            isPlayingAudio = true;
         }
 
-        if (FacingRight && currentHealth > 0)
+        if (FacingRight && currentHealth > 0 && gm.isPaused == false)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
-        if (!FacingRight && currentHealth > 0)
+        if (!FacingRight && currentHealth > 0 && gm.isPaused == false)
         {
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
@@ -51,7 +53,7 @@ public class BasicEnemyHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Nail")
+        if (collision.gameObject.name == "Nail" && gm.isPaused == false)
         {
             currentHealth--;
             StartCoroutine("OnHit");
