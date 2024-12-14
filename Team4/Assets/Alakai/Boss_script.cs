@@ -27,6 +27,7 @@ public class NewBehaviourScript : MonoBehaviour
     public bool insightrange = false;
     public LayerMask PlayerLayer;
     public Vector2 Playerloco;
+    public Animator animator;
 
     [Header("Movement")]
     public Transform Boss1;
@@ -170,6 +171,15 @@ public class NewBehaviourScript : MonoBehaviour
            StartCoroutine("DeathOfBoss");
         }
         pos = transform.position;
+
+        if(bossAtacking == true) 
+        {
+             animator.SetBool("attacking?", true);
+        }
+         if(bossAtacking == false) 
+        {
+             animator.SetBool("attacking?", false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

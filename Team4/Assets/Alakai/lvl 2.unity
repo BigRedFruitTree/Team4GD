@@ -2873,6 +2873,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   Playerloco: {x: 0, y: 0}
+  animator: {fileID: 1503889616}
   Boss1: {fileID: 1503889611}
   speed: 5
   right: 0
@@ -3090,8 +3091,10 @@ Animation:
   m_GameObject: {fileID: 1503889609}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 562b019596fc3d54392a1e17c0c26d87, type: 2}
-  m_Animations: []
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 562b019596fc3d54392a1e17c0c26d87, type: 2}
+  - {fileID: 7400000, guid: a578c54ee2238f341b74317b557c8b16, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
