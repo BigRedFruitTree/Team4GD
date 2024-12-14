@@ -5,9 +5,6 @@ TextureImporter:
   - first:
       213: -4109647963036294930
     second: frame0011_0
-  - first:
-      213: 1207929410615014618
-    second: frame0011_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,27 +103,6 @@ TextureImporter:
       name: frame0011_0
       rect:
         serializedVersion: 2
-        x: 834
-        y: 1024
-        width: 12
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee0605393f897f6c0800000000000000
-      internalID: -4109647963036294930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: frame0011_1
-      rect:
-        serializedVersion: 2
         x: 693
         y: 169
         width: 450
@@ -138,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad47479266d63c010800000000000000
-      internalID: 1207929410615014618
+      spriteID: ee0605393f897f6c0800000000000000
+      internalID: -4109647963036294930
       vertices: []
       indices: 
       edges: []
