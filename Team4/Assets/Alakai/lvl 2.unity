@@ -1908,7 +1908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToshow: 0.5
   FacingRight: 1
-  character: {fileID: 0}
+  character: {fileID: 1174914314}
   canAttack: 1
   audioSource: {fileID: 0}
   attack: {fileID: 8300000, guid: 23511f2ce04678b4fae145a0f40f57b9, type: 3}
@@ -1975,8 +1975,8 @@ Transform:
   m_GameObject: {fileID: 1027785577}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.702497, w: 0.7116867}
-  m_LocalPosition: {x: -8.615778, y: -2.6146867, z: 0}
-  m_LocalScale: {x: 0.37480542, y: 0.3027396, z: 0.92045}
+  m_LocalPosition: {x: -8.4, y: -17.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.92045}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
