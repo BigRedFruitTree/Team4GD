@@ -1807,7 +1807,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 3.6}
+    oldSize: {x: 1.52, y: 3.6}
     newSize: {x: 0.8, y: 3.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1833,6 +1833,8 @@ MonoBehaviour:
   canAttack: 1
   audioSource: {fileID: 0}
   attack: {fileID: 8300000, guid: 23511f2ce04678b4fae145a0f40f57b9, type: 3}
+  animator: {fileID: 0}
+  attacking: 0
 --- !u!212 &1027785580
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1876,7 +1878,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3905078186853608185, guid: cc8ca96bac55c5443af1ad29f047227f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06c1637652629b94f94c7536fa356aeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -2277,7 +2279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3034363314837417536, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.8
+      value: 4.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034363314837417536, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
       propertyPath: gm
