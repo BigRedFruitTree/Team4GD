@@ -15,6 +15,8 @@ public class turnoffonwep : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip attack;
+
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class turnoffonwep : MonoBehaviour
         attackAreaCollider = gameObject.GetComponent<BoxCollider2D>();
         character = GameObject.Find("blue_0").GetComponent<CharacterController2D>();
         audioSource = GameObject.Find("blue_0").GetComponent<AudioSource>();
+        animator = GameObject.Find("blue_0").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -54,7 +57,7 @@ public class turnoffonwep : MonoBehaviour
         FacingRight = !FacingRight;
         // Multiply the player's x local scale by -1.
         Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
+        theScale.x *= 1;
         transform.localScale = theScale;
     }
 

@@ -21,7 +21,7 @@ public class PlayerMovement1 : MonoBehaviour {
     public float runSpeed = 40f;
     public float knockbackForce = 1000f;
 
-    float horizontalMove = 0f;
+    public float horizontalMove = 0f;
     bool jump = false;
     [SerializeField] public int jumps = 2;
     int jumpsMax = 2;
@@ -30,7 +30,7 @@ public class PlayerMovement1 : MonoBehaviour {
 
     private SpriteRenderer playerSprite;
 
-    
+    public Animator animator;
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -44,6 +44,7 @@ public class PlayerMovement1 : MonoBehaviour {
         PlayerRB = GameObject.Find("blue_0").GetComponent<Rigidbody2D>();
         playerSprite = GameObject.Find("blue_0").GetComponent<SpriteRenderer>();
         audioSource = GameObject.Find("blue_0").GetComponent<AudioSource>();
+        animator = GameObject.Find("blue_0").GetComponent<Animator>();
        
     }
 
@@ -101,6 +102,15 @@ public class PlayerMovement1 : MonoBehaviour {
         if (gm.isPaused == true || gm.reset == true)
         {
             PlayerRB.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+
+        if(horizontalMove > 0 || horizontalMove < 0) 
+        {
+            animator.SetBool("walking?", true);
+        }
+        if(horizontalMove == 0) 
+        {
+            animator.SetBool("walking?", false);
         }
     }
 

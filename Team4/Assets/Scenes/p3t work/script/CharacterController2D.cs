@@ -7,6 +7,7 @@ public class CharacterController2D : MonoBehaviour
 
     [SerializeField] private float m_JumpForce = 400f;	// Amount of force added when the player jumps.
     public bool jump;
+	public bool moving = false;
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = true;							// Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
@@ -35,7 +36,6 @@ public class CharacterController2D : MonoBehaviour
     void Update()
     {
         playerMovementScript = GameObject.Find("blue_0").GetComponent<PlayerMovement1>();
-        
     }
 
 
@@ -80,7 +80,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 
 			
-
+		   
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
