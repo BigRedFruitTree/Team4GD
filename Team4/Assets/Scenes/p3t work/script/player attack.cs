@@ -7,7 +7,7 @@ public class playerattack : MonoBehaviour
     public GameManager gm;
     private GameObject attackArea;
 
-    public bool attacking = true;
+    public bool attacking = false;
     public bool canAttack = true;
 
     private float timeToAttack = 0.25f;
@@ -38,8 +38,8 @@ public class playerattack : MonoBehaviour
             {
 
                timer = 0;
-                attacking = false;
-                attackArea.SetActive(attacking);
+               attackArea.SetActive(attacking);
+               attacking = false;
             }
         }
     }

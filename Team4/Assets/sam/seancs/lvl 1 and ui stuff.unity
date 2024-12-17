@@ -1793,7 +1793,7 @@ Transform:
   m_GameObject: {fileID: 574064066}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.352202, y: -2.4178798, z: -10}
+  m_LocalPosition: {x: -4.690399, y: -2.42169, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2343,23 +2343,23 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2018153261}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1467098047884905690, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.61687666
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1467098047884905690, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.9103253
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1467098047884905690, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.222289
+      value: -5.0679364
       objectReference: {fileID: 0}
     - target: {fileID: 1467098047884905690, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.3607564
+      value: -5.1375356
       objectReference: {fileID: 0}
     - target: {fileID: 1467098047884905690, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2392,6 +2392,38 @@ PrefabInstance:
     - target: {fileID: 1467098047884905690, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -89.255
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916493027932312949, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
+      propertyPath: m_Size.x
+      value: 1.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916493027932312949, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
+      propertyPath: m_Size.y
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916493027932312949, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 06c1637652629b94f94c7536fa356aeb, type: 3}
+    - target: {fileID: 3916493027932312949, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916493027932312949, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916493027932312949, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916493027932312949, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916493027932312949, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5748413015995657976, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
       propertyPath: m_Name
@@ -5284,11 +5316,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5748413015995657976, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
   m_PrefabInstance: {fileID: 687194581}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1474819778 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1467098047884905690, guid: 3ff2a464cc85e2b4eac0c9bf94203150, type: 3}
-  m_PrefabInstance: {fileID: 687194581}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1482802319
 GameObject:
   m_ObjectHideFlags: 0
@@ -6020,7 +6047,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "W A S D to move.\nSpace to jump. \nDouble tap space bar to double jump.\nYou
-    can stick to walls by holding in the walls direction.\nPress F to Attack.\nPress
+    can stick to walls by holding in the walls direction.\nPress F to Attack.\nThe
+    Green Circle in the Bottom Right represents your health, you have 10.\nPress
     ESC to Pause, and do it when restarting"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6086,7 +6114,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.36479568, y: 0, z: 7.3972425, w: 1.8113556}
+  m_margin: {x: -0.7354164, y: 0, z: 3.955772, w: 0.88480616}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -6155,7 +6183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.03, y: -5.26}
+  m_AnchoredPosition: {x: -6.08, y: -5.26}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1672654076
@@ -6284,6 +6312,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: blue_0
       objectReference: {fileID: 0}
+    - target: {fileID: 3034363314837417536, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034363314837417536, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034363314837417536, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034363314837417536, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.73
+      objectReference: {fileID: 0}
     - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
       propertyPath: gm
       value: 
@@ -6391,10 +6435,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6081623500715610670, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7192595567562108192, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1474819778}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3018622933935618904, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
       insertIndex: -1
@@ -7592,3 +7633,4 @@ SceneRoots:
   - {fileID: 1648197933}
   - {fileID: 468145281}
   - {fileID: 1093107025}
+  - {fileID: 687194581}

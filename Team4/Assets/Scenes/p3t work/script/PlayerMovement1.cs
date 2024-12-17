@@ -13,6 +13,7 @@ public class PlayerMovement1 : MonoBehaviour {
     private GameObject Player;
     private Rigidbody2D PlayerRB;
     public GameObject Endgame;
+    public turnoffonwep playerAttackScript;
 
     public int health = 10;
     public int maxHealth = 10;
@@ -21,7 +22,7 @@ public class PlayerMovement1 : MonoBehaviour {
     public float runSpeed = 40f;
     public float knockbackForce = 1000f;
 
-    float horizontalMove = 0f;
+    public float horizontalMove = 0f;
     bool jump = false;
     [SerializeField] public int jumps = 2;
     int jumpsMax = 2;
@@ -30,7 +31,9 @@ public class PlayerMovement1 : MonoBehaviour {
 
     private SpriteRenderer playerSprite;
 
-    
+    public Animator animator;
+
+    public bool idle = true;
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -44,7 +47,8 @@ public class PlayerMovement1 : MonoBehaviour {
         PlayerRB = GameObject.Find("blue_0").GetComponent<Rigidbody2D>();
         playerSprite = GameObject.Find("blue_0").GetComponent<SpriteRenderer>();
         audioSource = GameObject.Find("blue_0").GetComponent<AudioSource>();
-       
+        animator = GameObject.Find("blue_0").GetComponent<Animator>();
+        playerAttackScript = GameObject.Find("Nail").GetComponent<turnoffonwep>();
     }
 
     // Update is called once per frame
@@ -102,6 +106,36 @@ public class PlayerMovement1 : MonoBehaviour {
         {
             PlayerRB.constraints = RigidbodyConstraints2D.FreezeAll;
         }
+
+        if(horizontalMove == 0 && playerAttackScript.attacking == false) 
+        {
+            idle = true;
+            animator.SetBool("idle?", true);
+        }else
+        {
+            idle = false;
+            animator.SetBool("idle?", false);
+        }
+
+        if(playerAttackScript.attacking == true) 
+        {
+             animator.SetBool("attacking?", true);
+             animator.SetBool("walking?", false);
+             idle = false;
+        }else 
+        {
+            animator.SetBool("attacking?", false);
+        }
+
+
+        if(horizontalMove > 0 && idle == false && playerAttackScript.attacking == false || horizontalMove < 0 && idle == false && playerAttackScript.attacking == false) 
+        {
+            animator.SetBool("walking?", true);
+        }else 
+        {
+            animator.SetBool("walking?", false);
+        }
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
