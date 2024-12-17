@@ -26,6 +26,7 @@ public class PlayerMovement1 : MonoBehaviour {
     bool jump = false;
     [SerializeField] public int jumps = 2;
     int jumpsMax = 2;
+    public bool jumping = false;
 
     public int healthBonus = 5;
 
@@ -79,16 +80,23 @@ public class PlayerMovement1 : MonoBehaviour {
             jumps--;
 			jump = true;
             audioSource.PlayOneShot(jumpAudio);
+            jumping = true;
 		}	
 
         if(controller.m_Grounded)
         {
             jumps = jumpsMax;
+            jumping = false;
+            
         }
+
+        if(controller.m_Grounded == false)
+        jumping = true;
 
         if (jumps < 0)
         {
             jumps = 0;
+            jumping = false;
         }
 
         Nail.transform.position = nailPos.transform.position;
@@ -127,13 +135,22 @@ public class PlayerMovement1 : MonoBehaviour {
             animator.SetBool("attacking?", false);
         }
 
-
         if(horizontalMove > 0 && idle == false && playerAttackScript.attacking == false || horizontalMove < 0 && idle == false && playerAttackScript.attacking == false) 
         {
             animator.SetBool("walking?", true);
         }else 
         {
             animator.SetBool("walking?", false);
+        }
+         
+         if(jumping == true) 
+        {
+            animator.SetBool("jumping?", true);
+            animator.SetBool("walking?", false);
+            animator.SetBool("attacking?", false);
+        }else 
+        {
+            animator.SetBool("jumping?", false);
         }
        
     }
