@@ -4923,6 +4923,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1402933125}
+    - target: {fileID: 1518523670995414409, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: attacking
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1814580546163273173, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
       propertyPath: m_Radius
       value: 0.65022707
@@ -5009,6 +5013,10 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 25529396d081bb147baea76dbdeb368b, type: 3}
     - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
       propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: playerAttackScript
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7192595567562108192, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
@@ -9466,6 +9474,7 @@ MonoBehaviour:
   canAttack: 1
   audioSource: {fileID: 0}
   attack: {fileID: 8300000, guid: 23511f2ce04678b4fae145a0f40f57b9, type: 3}
+  animator: {fileID: 0}
 --- !u!212 &1969619384
 SpriteRenderer:
   m_ObjectHideFlags: 0

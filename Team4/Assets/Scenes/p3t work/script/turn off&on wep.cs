@@ -17,6 +17,8 @@ public class turnoffonwep : MonoBehaviour
     public AudioClip attack;
 
     public Animator animator;
+
+    public bool attacking = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class turnoffonwep : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && canAttack == true)
         {
+           attacking = true;
            audioSource.PlayOneShot(attack);
            Flip();
            canAttack = false;
@@ -65,6 +68,7 @@ public class turnoffonwep : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         canAttack = true;
+        attacking = false;
 
     }
 }
