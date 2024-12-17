@@ -35,6 +35,8 @@ public class bossmovement : MonoBehaviour {
     private Quaternion posRO;
     public Vector3 bossPos;
     public bool amIDead = false;
+    public Rigidbody2D rb;
+    
 
     public GameManager gm;
 
@@ -51,7 +53,7 @@ public class bossmovement : MonoBehaviour {
 
 		localScale = transform.localScale;
         bossSprite = GameObject.Find("b").GetComponent<SpriteRenderer>();
-
+        rb = GameObject.Find("b").GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame
@@ -85,7 +87,14 @@ public class bossmovement : MonoBehaviour {
         {
             StartCoroutine("DeathOfBoss");
         }
-
+        if(gm.isPaused == true)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+        }
     }
 
 	void CheckWhereToFace()

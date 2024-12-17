@@ -11,6 +11,7 @@ public class turnoffonwep : MonoBehaviour
     public bool FacingRight = true;
     public CharacterController2D character;
 
+
     public bool canAttack = true;
 
     public AudioSource audioSource;

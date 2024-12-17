@@ -1257,7 +1257,7 @@ Transform:
   m_GameObject: {fileID: 257037711}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.629166, y: 41.38306, z: -10}
+  m_LocalPosition: {x: 23.157917, y: 41.39426, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7293,7 +7293,7 @@ Transform:
   m_GameObject: {fileID: 1490865397}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.46, y: -10.62, z: -0.25518888}
+  m_LocalPosition: {x: 22.46, y: -10.03, z: -0.25518888}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8934,7 +8934,7 @@ Transform:
   m_GameObject: {fileID: 1856389920}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.1, y: -10.62, z: -0.25518888}
+  m_LocalPosition: {x: 28.34, y: -10.08, z: -0.25518888}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9475,6 +9475,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   attack: {fileID: 8300000, guid: 23511f2ce04678b4fae145a0f40f57b9, type: 3}
   animator: {fileID: 0}
+  attacking: 0
 --- !u!212 &1969619384
 SpriteRenderer:
   m_ObjectHideFlags: 0
