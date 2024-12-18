@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;
     public PlayerMovement1 playerData;
     public Image healthBar;
+    public GameObject healthBarGO;
     public GameObject pausemenu;
     public GameObject gameoverScreen;
+    public GameObject endScreen;
     public bool finished = false;
     public bool reset = false;
 
@@ -20,14 +22,24 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().buildIndex > 0)
         {
-            pausemenu.SetActive(false);
-            gameoverScreen.SetActive(false);
+           pausemenu.SetActive(false);
+           gameoverScreen.SetActive(false);
            if(SceneManager.GetActiveScene().buildIndex > 0)
            {
             
              Cursor.lockState = CursorLockMode.Confined;
              Cursor.visible = false;
            }
+        }
+
+        if(SceneManager.GetActiveScene().buildIndex > 3) 
+        {
+            if(playerData.endGameActive == true) 
+            {
+                 Cursor.lockState = CursorLockMode.None;
+                 Cursor.visible = (true);
+                 healthBarGO.SetActive(false);
+            }
         }
         
 

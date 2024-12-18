@@ -13,6 +13,7 @@ public class PlayerMovement1 : MonoBehaviour {
     private GameObject Player;
     private Rigidbody2D PlayerRB;
     public GameObject Endgame;
+    public bool endGameActive = false;
     public turnoffonwep playerAttackScript;
 
     public int health = 10;
@@ -64,6 +65,7 @@ public class PlayerMovement1 : MonoBehaviour {
            if (boss2Move.amIDead == true)
            {
              Endgame.SetActive(true);
+             endGameActive = true;
            } 
         }
         

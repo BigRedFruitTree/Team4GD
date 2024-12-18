@@ -1429,6 +1429,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4496588196753804686, guid: c93ea01ed94d04c4291a83a7260f7ad6, type: 3}
+      propertyPath: endScreen
+      value: 
+      objectReference: {fileID: 1941676964}
+    - target: {fileID: 4496588196753804686, guid: c93ea01ed94d04c4291a83a7260f7ad6, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 349455924}
@@ -1440,6 +1444,10 @@ PrefabInstance:
       propertyPath: playerData
       value: 
       objectReference: {fileID: 1005524814}
+    - target: {fileID: 4496588196753804686, guid: c93ea01ed94d04c4291a83a7260f7ad6, type: 3}
+      propertyPath: healthBarGO
+      value: 
+      objectReference: {fileID: 349455921}
     - target: {fileID: 4496588196753804686, guid: c93ea01ed94d04c4291a83a7260f7ad6, type: 3}
       propertyPath: gameoverScreen
       value: 
@@ -3215,7 +3223,7 @@ MonoBehaviour:
   timeuntilattack: 9
   timeuntilattackredo: 7
   health: 1
-  maxHealth: 21
+  maxHealth: 10
   healthbar: {fileID: 1995643147}
   canTakeDamage: 1
   healthObject: {fileID: 6881950706674952249, guid: cb825c9309bba304f90e431ca35c89f1, type: 3}
@@ -5018,7 +5026,7 @@ Transform:
   m_GameObject: {fileID: 1856713779}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0803723, y: 2.3448598, z: -10}
+  m_LocalPosition: {x: -1.0808898, y: 2.34484, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
