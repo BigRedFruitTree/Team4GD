@@ -186,7 +186,7 @@ public class NewBehaviourScript : MonoBehaviour
              animator.SetBool("attacking?", false);
         }
 
-        if (bossAtacking == false && animator.GetBool("walking") == false)
+        if (bossAtacking == false && animator.GetBool("walking?") == false)
         {
             animator.SetBool("idle?", true);
         }else
