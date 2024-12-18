@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class turnoffonwep : MonoBehaviour
 {
-    public float timeToshow = 2f;
+    public float timeToshow = 0.8f;
     private float timer = 0f;
     SpriteRenderer spriteSquare;
     BoxCollider2D attackAreaCollider;
