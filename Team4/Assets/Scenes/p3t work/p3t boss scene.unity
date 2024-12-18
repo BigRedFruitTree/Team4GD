@@ -3205,16 +3205,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1a791ae3acc484b81c24fd6f585053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  moveSpeedredo: 5
+  moveSpeed: 5.35
+  moveSpeedredo: 4.75
   frequency: 5
   frequencyredo: 5
   magnitude: 0.5
   magnituderedo: 0.5
   farmove: 17
-  timeuntilattack: 14
-  timeuntilattackredo: 9
-  health: 100
+  timeuntilattack: 9
+  timeuntilattackredo: 7
+  health: 1
+  maxHealth: 21
   healthbar: {fileID: 1995643147}
   canTakeDamage: 1
   healthObject: {fileID: 6881950706674952249, guid: cb825c9309bba304f90e431ca35c89f1, type: 3}
@@ -3268,7 +3269,7 @@ MonoBehaviour:
   attack: 1
   stinger: {fileID: 3942128742316807294, guid: 7b50477713b899e4ba9a5d0bb0530209, type: 3}
   stingpos: {fileID: 1378273163}
-  firerateBIGNext: 1.5
+  firerateBIGNext: 1.35
   fireratemultiNext: 0.45
   Multtime: 5
   move: {fileID: 1399754421}
@@ -3290,7 +3291,7 @@ MonoBehaviour:
   gm: {fileID: 0}
   stinger: {fileID: 3942128742316807294, guid: 7b50477713b899e4ba9a5d0bb0530209, type: 3}
   stingpos: {fileID: 1378273163}
-  tillnext: 1.5
+  tillnext: 1.75
 --- !u!61 &1399754425
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5017,7 +5018,7 @@ Transform:
   m_GameObject: {fileID: 1856713779}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0801302, y: 2.3448598, z: -10}
+  m_LocalPosition: {x: -1.0803723, y: 2.3448598, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
