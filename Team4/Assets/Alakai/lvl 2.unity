@@ -3078,8 +3078,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 1501493554}
-  health: 20
-  maxHealth: 20
+  health: 15
+  maxHealth: 15
   healthbar: {fileID: 1508008602}
   agent: {fileID: 0}
   player: {fileID: 1174914312}
@@ -3142,7 +3142,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.023286223, y: -0.61209404}
+  m_Offset: {x: 0.101364255, y: -0.6120939}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3152,7 +3152,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.884875, y: 7.1761866}
+  m_Size: {x: 3.2382271, y: 7.1761866}
   m_EdgeRadius: 0
 --- !u!50 &1503889614
 Rigidbody2D:
@@ -3401,9 +3401,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 20
+  m_MaxValue: 15
   m_WholeNumbers: 0
-  m_Value: 20
+  m_Value: 15
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

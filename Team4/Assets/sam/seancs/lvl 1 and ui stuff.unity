@@ -1793,7 +1793,7 @@ Transform:
   m_GameObject: {fileID: 574064066}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.690399, y: -2.42169, z: -10}
+  m_LocalPosition: {x: -4.6356263, y: -2.4215999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6046,10 +6046,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "W A S D to move.\nSpace to jump. \nDouble tap space bar to double jump.\nYou
-    can stick to walls by holding in the walls direction.\nPress F to Attack.\nThe
-    Green Circle in the Bottom Right represents your health, you have 10.\nPress
-    ESC to Pause, and do it when restarting"
+  m_text: "W A S D to move.\nSpace to jump. \nDouble tap space bar to double jump.\nPress
+    F to Attack.\nPress ESC to Pause."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6082,7 +6080,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 4
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -6114,7 +6112,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.7354164, y: 0, z: 3.955772, w: 0.88480616}
+  m_margin: {x: -0.7354164, y: 0, z: 12.170271, w: 1.9025321}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -6183,7 +6181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.08, y: -5.26}
+  m_AnchoredPosition: {x: -5.57, y: -6.35}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1672654076
