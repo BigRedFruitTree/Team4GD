@@ -435,7 +435,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.70896864, y: -0.37980556}
+  m_Offset: {x: 1.8321972, y: -0.37980556}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -445,7 +445,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.0768814, y: 11.48262}
+  m_Size: {x: 4.8304243, y: 11.48262}
   m_EdgeRadius: 0
 --- !u!212 &19427341
 SpriteRenderer:
@@ -3093,15 +3093,15 @@ MonoBehaviour:
   Playerloco: {x: 0, y: 0}
   animator: {fileID: 1503889616}
   Boss1: {fileID: 1503889611}
-  speed: 5
+  speed: 3
   right: 0
   pos: {x: 0, y: 0, z: 0}
   localScale: {x: 0, y: 0, z: 0}
   PlayerGame: {fileID: 1174914311}
-  StunLengthSet: 5
+  StunLengthSet: 7
   canTakeDamage: 1
   attack1HB: {fileID: 19427338}
-  attackTimerSet: 5
+  attackTimerSet: 7
   bossAtacking: 0
   attackNumber: 0
   StunTimerSet: 10
