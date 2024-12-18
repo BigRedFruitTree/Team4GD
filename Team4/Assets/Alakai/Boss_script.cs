@@ -118,13 +118,16 @@ public class NewBehaviourScript : MonoBehaviour
         if (StunNumber == 1)
         {
             Stuneffect();
+            Active = 0;
         }
 
         if (StunLength > 0)
         {
             StunLength -= Time.deltaTime;
+            animator.SetBool("walking?", true);
+
         }
-        else if (StunLength < 0)
+        if (StunLength < 0)
         {
             StunLength = 1000000;
             bossAtacking = false;
@@ -152,10 +155,12 @@ public class NewBehaviourScript : MonoBehaviour
                 if (right == true)
                 {
                     transform.Translate(Vector2.right * speed * Time.deltaTime);
+                    
                 }
                 if (right == false)
                 {
                     transform.Translate(Vector2.left * speed * Time.deltaTime);
+                    
                 }
             }
         }
@@ -176,9 +181,26 @@ public class NewBehaviourScript : MonoBehaviour
         {
              animator.SetBool("attacking?", true);
         }
-         if(bossAtacking == false) 
+        if(bossAtacking == false) 
         {
              animator.SetBool("attacking?", false);
+        }
+
+        if (bossAtacking == false && animator.GetBool("walking") == false)
+        {
+            animator.SetBool("idle?", true);
+        }else
+        {
+            animator.SetBool("idle?", false);
+        }
+
+        if (Active == 1)
+        {
+            animator.SetBool("walking?", true);
+        }
+        else
+        {
+            animator.SetBool("walking?", false);
         }
     }
 
@@ -190,6 +212,7 @@ public class NewBehaviourScript : MonoBehaviour
             BossCollider.isTrigger = true;
             StartCoroutine("BossCollidesWithPlayer");
             StartCoroutine("HitCoolDown");
+            StartCoroutine("OnHit");
         }
     }
 
@@ -265,7 +288,8 @@ public class NewBehaviourScript : MonoBehaviour
         Active = 0;
         StunLength = StunLengthSet;
         StunTimer = 1000000;
-        
+        animator.SetBool("idle?", true);
+        animator.SetBool("walking?", false);
     }
 
     IEnumerator OnHit()
