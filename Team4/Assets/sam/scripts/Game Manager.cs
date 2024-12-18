@@ -18,14 +18,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pausemenu.SetActive(false);
-        gameoverScreen.SetActive(false);
         if(SceneManager.GetActiveScene().buildIndex > 0)
         {
+            pausemenu.SetActive(false);
+            gameoverScreen.SetActive(false);
+           if(SceneManager.GetActiveScene().buildIndex > 0)
+           {
             
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = false;
+             Cursor.lockState = CursorLockMode.Confined;
+             Cursor.visible = false;
+           }
         }
+        
 
 
     }

@@ -143,7 +143,7 @@ public class PlayerMovement1 : MonoBehaviour {
             animator.SetBool("walking?", false);
         }
          
-         if(jumping == true) 
+        if(jumping == true) 
         {
             animator.SetBool("jumping?", true);
             animator.SetBool("walking?", false);
