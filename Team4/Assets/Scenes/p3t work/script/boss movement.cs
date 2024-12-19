@@ -67,14 +67,18 @@ public class bossmovement : MonoBehaviour {
 			MoveRight ();
 		else
 			MoveLeft ();
-        if (timeuntilattack > 0)
+        if (timeuntilattack > 0 && gm.isPaused == false)
         {
             timeuntilattack -= Time.deltaTime;
         }
         else
         {
-            this.GetComponent<bossattacking>().enabled = true;
-            timeuntilattack = 0;
+            if(gm.isPaused == false)
+            {
+              this.GetComponent<bossattacking>().enabled = true;
+              timeuntilattack = 0;
+            }
+            
         }
 
         if (health <= 0 && isPlayingAudio == false && gm.isPaused == false)

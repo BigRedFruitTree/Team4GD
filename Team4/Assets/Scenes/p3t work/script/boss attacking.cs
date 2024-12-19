@@ -53,42 +53,51 @@ public class bossattacking : MonoBehaviour
     }
     void OnDisable()
     {
+        if(gm.isPaused == false)
         stinger.transform.localScale = new Vector3(1f, 1.25f, 1.25f);
     }
 
     // Update is called once per frame
     void Update()
     {
-    if (timetillstop > 0)
+        if (timetillstop > 0 && gm.isPaused == false)
         {
             timetillstop -= Time.deltaTime * Multtime;
         }
         else
         {
-            multishot();
-            timetillstop = 100000;
+            if(gm.isPaused == false)
+            {
+              multishot();
+              timetillstop = 100000;
+            }
+            
         }
-    if (Mult > 0)
-    {
+       if (Mult > 0 && gm.isPaused == false)
+       {
             if (firerate > 0f && gm.isPaused == false)
             {
                 firerate -= Time.deltaTime;
             }
             else
             {
-            Multileft--;
-            shoot();
-             if (attacktype == AttackType.BIGSHOT && gm.isPaused == false)
-             {
+                if(gm.isPaused == false)
+                {
+                 Multileft--;
+                 shoot();
+                }
+              
+               if (attacktype == AttackType.BIGSHOT && gm.isPaused == false)
+               {
                   firerate = firerateBIGNext;
-             }
+               }
                 if (attacktype == AttackType.multishot && gm.isPaused == false)
                 {
                     firerate = fireratemultiNext;
                 }
             }
-        }
-    if (Multileft <= 0 && gm.isPaused == false)
+       }
+        if (Multileft <= 0 && gm.isPaused == false)
         {
             move.moveSpeed = move.moveSpeedredo;
             move.frequency = move.frequencyredo;
