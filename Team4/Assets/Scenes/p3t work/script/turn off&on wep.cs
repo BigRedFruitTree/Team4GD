@@ -10,6 +10,7 @@ public class turnoffonwep : MonoBehaviour
     BoxCollider2D attackAreaCollider;
     public bool FacingRight = true;
     public CharacterController2D character;
+    public GameManager gm;
 
 
     public bool canAttack = true;
@@ -33,7 +34,7 @@ public class turnoffonwep : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && canAttack == true)
+        if (Input.GetKeyDown(KeyCode.F) && canAttack == true && gm.isPaused == false)
         {
            attacking = true;
            audioSource.PlayOneShot(attack);
@@ -44,9 +45,10 @@ public class turnoffonwep : MonoBehaviour
            StartCoroutine("HitCoolDown");
             
         }
+        if(gm.isPaused == false)
         timer += Time.deltaTime;
 
-        if (timer >= timeToshow)
+        if (timer >= timeToshow && gm.isPaused == false)
         {
             timer = 0;
             spriteSquare.enabled = false;

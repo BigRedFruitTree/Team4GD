@@ -46,6 +46,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: idle?
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isPaused?
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8725063471688751439}
   m_Solo: 0
@@ -70,6 +73,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: attacking?
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isPaused?
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2775893087759673973}
@@ -130,6 +136,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: walking?
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isPaused?
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8725063471688751439}
@@ -247,6 +256,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: attacking?
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isPaused?
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1498238820884751924}
   m_Solo: 0
@@ -306,25 +318,31 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: attacking?
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: idle?
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: jumping?
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
+  - m_Name: isPaused?
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -421,6 +439,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: attacking?
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isPaused?
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2775893087759673973}
   m_Solo: 0
@@ -449,6 +470,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: idle?
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isPaused?
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1498238820884751924}
   m_Solo: 0
@@ -473,6 +497,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: jumping?
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isPaused?
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1498238820884751924}
@@ -505,6 +532,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: idle?
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isPaused?
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8725063471688751439}
   m_Solo: 0
@@ -532,6 +562,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: attacking?
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isPaused?
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2775893087759673973}

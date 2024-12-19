@@ -2030,6 +2030,7 @@ MonoBehaviour:
   timeToshow: 0.5
   FacingRight: 1
   character: {fileID: 1174914314}
+  gm: {fileID: 1501493554}
   canAttack: 1
   audioSource: {fileID: 0}
   attack: {fileID: 8300000, guid: 23511f2ce04678b4fae145a0f40f57b9, type: 3}

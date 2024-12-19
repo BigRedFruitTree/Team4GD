@@ -168,10 +168,15 @@ public class PlayerMovement1 : MonoBehaviour {
             animator.SetBool("jumping?", false);
             animator.SetBool("walking?", false);
             animator.SetBool("attacking?", false);
-            animator.SetBool("idle?", false);
+            animator.SetBool("idle?", true);
             jumping = false;
             playerAttackScript.attacking = false;
             horizontalMove = 0;
+            animator.SetBool("isPaused?", true);
+        }
+        else
+        {
+            animator.SetBool("isPaused?", false);
         }
 
 
