@@ -9,8 +9,9 @@ public class GameManager : MonoBehaviour
 {
     public bool isPaused = false;
     public PlayerMovement1 playerData;
-    public Image healthBar;
-    public GameObject healthBarGO;
+    
+    public Slider healthBar;
+    public GameObject healthBarStuff;
     public GameObject pausemenu;
     public GameObject gameoverScreen;
     public GameObject endScreen;
@@ -38,12 +39,9 @@ public class GameManager : MonoBehaviour
             {
                  Cursor.lockState = CursorLockMode.None;
                  Cursor.visible = (true);
-                 healthBarGO.SetActive(false);
+                 healthBarStuff.SetActive(false);
             }
         }
-        
-
-
     }
 
     //this note
@@ -52,8 +50,7 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex > 0)
         {
-            healthBar.fillAmount = Mathf.Clamp((float)playerData.health / (float)playerData.maxHealth, 0, 1);
-
+            healthBar.value = playerData.health;
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (!isPaused)
@@ -73,7 +70,6 @@ public class GameManager : MonoBehaviour
                 {
                     RestartLevel();
                 }
-
             }
             if(playerData.health <= 0)
             {
