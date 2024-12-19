@@ -37,6 +37,8 @@ public class PlayerMovement1 : MonoBehaviour {
 
     public bool idle = true;
 
+    public GameObject playerIndicator;
+
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip hurt;
@@ -215,6 +217,11 @@ public class PlayerMovement1 : MonoBehaviour {
             StartCoroutine("HitCoolDown");
             health--;
         }
+
+        if (collision.gameObject.tag == "TreeHollow" && gm.reset == false && gm.isPaused == false)
+        {
+            playerIndicator.SetActive(true);
+        }
     }
    
     private void OnCollisionEnter2D(Collision2D collision) 
@@ -226,6 +233,14 @@ public class PlayerMovement1 : MonoBehaviour {
             StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
             health--;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) 
+    {
+        if (collision.gameObject.tag == "TreeHollow" && gm.reset == false && gm.isPaused == false)
+        {
+           playerIndicator.SetActive(false);
         }
     }
 

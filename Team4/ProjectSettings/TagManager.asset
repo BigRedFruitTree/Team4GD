@@ -12,6 +12,7 @@ TagManager:
   - Boss1
   - HIVE
   - healthObject
+  - TreeHollow
   layers:
   - Default
   - TransparentFX
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: front of tree
     uniqueID: 666272007
+    locked: 0
+  - name: indicator
+    uniqueID: 635892899
     locked: 0
