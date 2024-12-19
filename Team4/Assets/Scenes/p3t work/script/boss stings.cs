@@ -19,6 +19,7 @@ public class bossstings : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gm.isPaused == false)
         bullettime += Time.deltaTime;
 
         if(bullettime > tillnext)

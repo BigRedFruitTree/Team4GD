@@ -51,7 +51,7 @@ public class bossattacking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    if (timetillstop > 0)
+    if (timetillstop > 0 && gm.isPaused == false)
         {
             timetillstop -= Time.deltaTime * Multtime;
         }
