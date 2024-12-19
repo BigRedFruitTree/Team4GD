@@ -6,9 +6,6 @@ using UnityEngine.AI;
 using Vector2 = UnityEngine.Vector2;
 using Unity.VisualScripting;
 
-
-
-
 public class NewBehaviourScript : MonoBehaviour
 {
     public GameManager gm;

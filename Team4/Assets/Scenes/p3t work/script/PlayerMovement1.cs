@@ -8,9 +8,13 @@ public class PlayerMovement1 : MonoBehaviour {
     public GameManager gm;
     public CharacterController2D controller;
     public bossmovement boss2Move;
+    public Transform boss2Tr;
+    public NewBehaviourScript boss1Move;
+    public Transform boss1Ref;
     public GameObject nailPos;
     public GameObject Nail;
-    private GameObject Player;
+    public GameObject Player;
+    public Transform PTransform;
     private Rigidbody2D PlayerRB;
     public GameObject Endgame;
     public bool endGameActive = false;
@@ -21,7 +25,7 @@ public class PlayerMovement1 : MonoBehaviour {
     public bool canTakeDamage = true;
 
     public float runSpeed = 40f;
-    public float knockbackForce = 1000f;
+    public float knockbackForce = 5f;
 
     public float horizontalMove = 0f;
     bool jump = false;
@@ -48,6 +52,7 @@ public class PlayerMovement1 : MonoBehaviour {
     private void Start()
     {
         Player = GameObject.Find("blue_0");
+        PTransform = GameObject.Find("blue_0").GetComponent<Transform>();
         PlayerRB = GameObject.Find("blue_0").GetComponent<Rigidbody2D>();
         playerSprite = GameObject.Find("blue_0").GetComponent<SpriteRenderer>();
         audioSource = GameObject.Find("blue_0").GetComponent<AudioSource>();
@@ -216,6 +221,24 @@ public class PlayerMovement1 : MonoBehaviour {
             StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
             health--;
+
+            
+            if(SceneManager.GetActiveScene().buildIndex > 3) 
+            {
+               if(PTransform.position.x < boss2Tr.position.x)
+               {
+                 Vector2 difference = (transform.position - collision.transform.position).normalized;
+                 Vector2 force = difference.normalized * knockbackForce;
+                 PlayerRB.AddForce(force, ForceMode2D.Force);
+               }
+
+               if(PTransform.position.x > boss2Tr.position.x)
+               {
+                 Vector2 difference = (transform.position - collision.transform.position).normalized;
+                 Vector2 force = difference.normalized * knockbackForce;
+                 PlayerRB.AddForce(force, ForceMode2D.Force);
+               }
+            }
         }
 
         if (collision.gameObject.tag == "TreeHollow" && gm.reset == false && gm.isPaused == false)
@@ -233,6 +256,24 @@ public class PlayerMovement1 : MonoBehaviour {
             StartCoroutine("OnHit");
             StartCoroutine("HitCoolDown");
             health--;
+
+            if(SceneManager.GetActiveScene().buildIndex > 1 && SceneManager.GetActiveScene().buildIndex < 3) 
+            {
+               if(PTransform.position.x < boss1Ref.position.x)
+               {
+                 Vector2 difference = (transform.position - collision.transform.position).normalized;
+                 Vector2 force = difference.normalized * knockbackForce;
+                 PlayerRB.AddForce(force, ForceMode2D.Force);
+               }
+
+               if(PTransform.position.x > boss1Ref.position.x)
+               {
+                 Vector2 difference = (transform.position - collision.transform.position).normalized;
+                 Vector2 force = difference.normalized * knockbackForce;
+                 PlayerRB.AddForce(force, ForceMode2D.Force);
+               }
+            }
+            
         }
     }
 

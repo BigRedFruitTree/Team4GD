@@ -2189,6 +2189,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1941676964}
     - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: boss2Tr
+      value: 
+      objectReference: {fileID: 1399754420}
+    - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
       propertyPath: nailPos
       value: 
       objectReference: {fileID: 1005524815}

@@ -2310,6 +2310,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1174914313}
     - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: boss1Ref
+      value: 
+      objectReference: {fileID: 1503889611}
+    - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
+      propertyPath: boss1Move
+      value: 
+      objectReference: {fileID: 1503889612}
+    - target: {fileID: 5875950817750230245, guid: aa184c1803136484f8323ccef97e7b39, type: 3}
       propertyPath: healhGain
       value: 
       objectReference: {fileID: 8300000, guid: 25529396d081bb147baea76dbdeb368b, type: 3}
@@ -3100,6 +3108,8 @@ MonoBehaviour:
   PlayerGame: {fileID: 1174914311}
   StunLengthSet: 7
   canTakeDamage: 1
+  turnTimer: 0
+  turnTimerSet: 3
   attack1HB: {fileID: 19427338}
   attackTimerSet: 7
   bossAtacking: 0
