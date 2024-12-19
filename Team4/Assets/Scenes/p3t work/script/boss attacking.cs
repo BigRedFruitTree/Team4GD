@@ -25,7 +25,7 @@ public class bossattacking : MonoBehaviour
     // OnEnable is called before the first frame Everytime
     void OnEnable()
     {
-        if (attack == 1)
+        if (attack == 1 && gm.isPaused == false)
         {
             attacktype = AttackType.BIGSHOT;
             attack = 2;
@@ -33,15 +33,23 @@ public class bossattacking : MonoBehaviour
         }
         else
         {
-            attacktype = AttackType.multishot;
-            attack = 1;
-            firerate = fireratemultiNext;
+            if(gm.isPaused == false)
+            {
+               attacktype = AttackType.multishot;
+              attack = 1;
+              firerate = fireratemultiNext;
+            }
+           
         }
-        timetillstop = timetillstopNext;
-        Multileft = 1;
-        this.GetComponent<bossstings>().enabled = false;
-        move.moveSpeed = 0f;
-        move.magnitude = 0.2f;
+        if(gm.isPaused == false)
+        {
+          timetillstop = timetillstopNext;
+          Multileft = 1;
+          this.GetComponent<bossstings>().enabled = false;
+          move.moveSpeed = 0f;
+          move.magnitude = 0.2f;
+        }
+        
     }
     void OnDisable()
     {
@@ -51,7 +59,7 @@ public class bossattacking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    if (timetillstop > 0 && gm.isPaused == false)
+    if (timetillstop > 0)
         {
             timetillstop -= Time.deltaTime * Multtime;
         }
@@ -62,7 +70,7 @@ public class bossattacking : MonoBehaviour
         }
     if (Mult > 0)
     {
-            if (firerate > 0f)
+            if (firerate > 0f && gm.isPaused == false)
             {
                 firerate -= Time.deltaTime;
             }
@@ -70,17 +78,17 @@ public class bossattacking : MonoBehaviour
             {
             Multileft--;
             shoot();
-             if (attacktype == AttackType.BIGSHOT)
+             if (attacktype == AttackType.BIGSHOT && gm.isPaused == false)
              {
                   firerate = firerateBIGNext;
              }
-                if (attacktype == AttackType.multishot)
+                if (attacktype == AttackType.multishot && gm.isPaused == false)
                 {
                     firerate = fireratemultiNext;
                 }
             }
         }
-    if (Multileft <= 0)
+    if (Multileft <= 0 && gm.isPaused == false)
         {
             move.moveSpeed = move.moveSpeedredo;
             move.frequency = move.frequencyredo;
@@ -94,12 +102,12 @@ public class bossattacking : MonoBehaviour
     void multishot()
     {
         Mult = 1;
-        if (attacktype == AttackType.BIGSHOT)
+        if (attacktype == AttackType.BIGSHOT && gm.isPaused == false)
         {
             Multileft = Multileft1;
             stinger.transform.localScale = new Vector3(1.5f, 2f, 2f);
         }
-        if (attacktype == AttackType.multishot)
+        if (attacktype == AttackType.multishot && gm.isPaused == false)
         {
             Multileft = Multileft2;
             stinger.transform.localScale = new Vector3(0.6f, 1.25f, 1.25f);
@@ -107,6 +115,7 @@ public class bossattacking : MonoBehaviour
     }
     void shoot()
     {
+        if(gm.isPaused == false)
         Instantiate(stinger, stingpos.position, Quaternion.identity);
     }
 }
