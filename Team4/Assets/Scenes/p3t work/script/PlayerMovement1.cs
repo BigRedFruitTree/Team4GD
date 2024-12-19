@@ -163,14 +163,18 @@ public class PlayerMovement1 : MonoBehaviour {
             animator.SetBool("jumping?", false);
         }
        
-        if(gm.isPaused == false)
+        if(gm.isPaused == true)
         {
             animator.SetBool("jumping?", false);
             animator.SetBool("walking?", false);
             animator.SetBool("attacking?", false);
             animator.SetBool("idle?", false);
-           
+            jumping = false;
+            playerAttackScript.attacking = false;
+            horizontalMove = 0;
         }
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
