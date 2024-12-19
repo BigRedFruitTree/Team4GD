@@ -3434,7 +3434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacktype: 0
-  gm: {fileID: 0}
+  gm: {fileID: 1931004597}
   attack: 1
   stinger: {fileID: 3942128742316807294, guid: 7b50477713b899e4ba9a5d0bb0530209, type: 3}
   stingpos: {fileID: 1378273163}
@@ -3457,7 +3457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86758b797fb642941bcb83cae69471d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 1931004597}
   stinger: {fileID: 3942128742316807294, guid: 7b50477713b899e4ba9a5d0bb0530209, type: 3}
   stingpos: {fileID: 1378273163}
   tillnext: 1.75
@@ -5223,7 +5223,7 @@ Transform:
   m_GameObject: {fileID: 1856713779}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0795977, y: 2.3448799, z: -10}
+  m_LocalPosition: {x: -1.0800695, y: 2.3448699, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
