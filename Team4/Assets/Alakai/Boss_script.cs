@@ -41,7 +41,8 @@ public class NewBehaviourScript : MonoBehaviour
     private float StunLength;
     public float StunLengthSet;
     public bool canTakeDamage = true;
-
+    public float turnTimer;
+    public float turnTimerSet = 3;
 
     [Header("Attack")]
     public GameObject attack1HB;
@@ -68,6 +69,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         attackTimer = attackTimerSet;
         StunTimer = StunTimerSet;
+        turnTimer = turnTimerSet;
         attack1HB.SetActive(false);
 
         health = maxHealth;
@@ -124,7 +126,6 @@ public class NewBehaviourScript : MonoBehaviour
         if (StunLength > 0)
         {
             StunLength -= Time.deltaTime;
-            animator.SetBool("walking?", true);
 
         }
         if (StunLength < 0)
@@ -149,19 +150,21 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (Active == 1)
         {
+            animator.SetBool("walking?", true);
             if (insightrange == true && gm.isPaused == false)
             {
                 CheckFacing();
+                
                 if (right == true)
                 {
-                    transform.Translate(Vector2.right * speed * Time.deltaTime);
-                    
+                  transform.Translate(Vector2.right * speed * Time.deltaTime);
                 }
                 if (right == false)
                 {
-                    transform.Translate(Vector2.left * speed * Time.deltaTime);
-                    
+                  transform.Translate(Vector2.left * speed * Time.deltaTime);
                 }
+                
+               
             }
         }
 
@@ -186,7 +189,7 @@ public class NewBehaviourScript : MonoBehaviour
              animator.SetBool("attacking?", false);
         }
 
-        if (bossAtacking == false && animator.GetBool("walking?") == false)
+        if (animator.GetBool("walking?") == false)
         {
             animator.SetBool("idle?", true);
         }else
@@ -269,17 +272,30 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void CheckFacing() 
     {
-        if (Player.position.x < Boss1.position.x)
+         if(turnTimer <= 0) 
+         {
+           turnTimer = turnTimerSet;
+         }
+                    
+         if(turnTimer > 0) 
+         {
+           turnTimer -= Time.deltaTime;
+         }
+
+         if(turnTimer <= 0) 
+         {
+            if (Player.position.x < Boss1.position.x)
             right = false;
 
-        if (Player.position.x > Boss1.position.x)
+            if (Player.position.x > Boss1.position.x)
             right = true;
 
-        if (((right) && (localScale.x > 0)) || ((!right) && (localScale.x < 0))) 
-        {
-           localScale.x *= -1;
-        }
-		transform.localScale = localScale;
+            if (((right) && (localScale.x > 0)) || ((!right) && (localScale.x < 0))) 
+            {
+              localScale.x *= -1;
+            }
+		    transform.localScale = localScale;
+         }
     }
     void Stuneffect()
     {
@@ -298,6 +314,5 @@ public class NewBehaviourScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
         bossSprite.color = new Color(1f, 1f, 1f, 1f);
     }
-
 }
 
