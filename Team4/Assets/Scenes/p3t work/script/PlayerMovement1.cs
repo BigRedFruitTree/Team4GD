@@ -26,7 +26,7 @@ public class PlayerMovement1 : MonoBehaviour {
     public bool canTakeDamage = true;
 
     public float runSpeed = 40f;
-    public float knockbackForce = 5f;
+    public float knockbackForce = 25f;
 
     public float horizontalMove = 0f;
     bool jump = false;
@@ -245,8 +245,8 @@ public class PlayerMovement1 : MonoBehaviour {
             {
                if(PTransform.position.x < boss2Tr.position.x)
                {
-                 Vector2 difference = (transform.position - collision.transform.position).normalized;
-                 Vector2 force = difference.normalized * knockbackForce;
+                 Vector2 difference = (transform.position - collision.transform.position);
+                 Vector2 force = difference * knockbackForce;
                  PlayerRB.AddForce(force, ForceMode2D.Force);
                }
 
@@ -279,8 +279,8 @@ public class PlayerMovement1 : MonoBehaviour {
             {
                if(PTransform.position.x < boss1Ref.position.x)
                {
-                 Vector2 difference = (transform.position - collision.transform.position).normalized;
-                 Vector2 force = difference.normalized * knockbackForce;
+                 Vector2 difference = (transform.position - collision.transform.position);
+                 Vector2 force = difference * knockbackForce;
                  PlayerRB.AddForce(force, ForceMode2D.Force);
                }
 
